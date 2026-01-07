@@ -7,6 +7,8 @@
     <meta name="keywords" content="natural cosmetics, sustainable packaging, eco-friendly beauty, reusable containers, custom skincare">
     <title>EcoEssence by Banana | Natural Cosmetics & Sustainable Packaging</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <!-- Language Selector -->
@@ -19,7 +21,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1>🌿 EcoEssence</h1>
+                <h1><i data-lucide="leaf"></i> EcoEssence</h1>
                 <p class="tagline" data-en="by Google Nanobanana" data-pt="por Google Nanobanana">by Google Nanobanana</p>
             </div>
             <ul class="nav-menu">
@@ -69,61 +71,167 @@
                Custom natural formulas tailored to your unique needs
             </p>
             
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-icon">🧴</div>
-                    <h3 data-en="Face Serums" data-pt="Séruns Faciais">Face Serums</h3>
-                    <p data-en="Concentrated botanical extracts for radiant, healthy skin. Custom blended for your skin type."
-                       data-pt="Extratos botânicos concentrados para uma pele radiante e saudável. Misturados sob medida para o seu tipo de pele.">
-                       Concentrated botanical extracts for radiant, healthy skin. Custom blended for your skin type.
-                    </p>
-                    <ul class="product-features">
-                        <li data-en="100% Natural Ingredients" data-pt="100% Ingredientes Naturais">100% Natural Ingredients</li>
-                        <li data-en="Customizable Formula" data-pt="Fórmula Personalizável">Customizable Formula</li>
-                        <li data-en="Cruelty-Free" data-pt="Livre de Crueldade">Cruelty-Free</li>
-                    </ul>
-                </div>
+            <div class="product-tabs">
+                <button class="tab-btn active" data-category="skincare" data-en="Skincare" data-pt="Skincare">Skincare</button>
+                <button class="tab-btn" data-category="haircare" data-en="Haircare" data-pt="Cabelo">Haircare</button>
+            </div>
 
-                <div class="product-card">
-                    <div class="product-icon">🌸</div>
-                    <h3 data-en="Moisturizers" data-pt="Hidratantes">Moisturizers</h3>
-                    <p data-en="Nourishing creams with organic oils and natural humectants. Perfect hydration for every skin type."
-                       data-pt="Cremes nutritivos com óleos orgânicos e umectantes naturais. Hidratação perfeita para cada tipo de pele.">
-                       Nourishing creams with organic oils and natural humectants. Perfect hydration for every skin type.
-                    </p>
-                    <ul class="product-features">
-                        <li data-en="Organic Ingredients" data-pt="Ingredientes Orgânicos">Organic Ingredients</li>
-                        <li data-en="Long-lasting Hydration" data-pt="Hidratação Duradoura">Long-lasting Hydration</li>
-                        <li data-en="Eco-Certified" data-pt="Certificado Ecológico">Eco-Certified</li>
-                    </ul>
-                </div>
+            <div id="skincare" class="product-category active">
+                <div class="product-grid">
+                    <div class="product-card glowing-border">
+                        <div class="product-icon"><i data-lucide="gem"></i></div>
+                        <h3 data-en="Face Serums" data-pt="Séruns Faciais">Face Serums</h3>
+                        <p data-en="Concentrated botanical extracts for radiant, healthy skin. Custom blended for your skin type."
+                           data-pt="Extratos botânicos concentrados para uma pele radiante e saudável. Misturados sob medida para o seu tipo de pele.">
+                           Concentrated botanical extracts for radiant, healthy skin. Custom blended for your skin type.
+                        </p>
+                    </div>
 
-                <div class="product-card">
-                    <div class="product-icon">🍃</div>
-                    <h3 data-en="Cleansers" data-pt="Limpadores">Cleansers</h3>
-                    <p data-en="Gentle yet effective cleansing formulas with plant-based surfactants. Clean beauty, naturally."
-                       data-pt="Fórmulas de limpeza suaves, mas eficazes, com surfactantes à base de plantas. Beleza limpa, naturalmente.">
-                       Gentle yet effective cleansing formulas with plant-based surfactants. Clean beauty, naturally.
-                    </p>
-                    <ul class="product-features">
-                        <li data-en="pH Balanced" data-pt="pH Balanceado">pH Balanced</li>
-                        <li data-en="Plant-Based Formula" data-pt="Fórmula à Base de Plantas">Plant-Based Formula</li>
-                        <li data-en="Biodegradable" data-pt="Biodegradável">Biodegradable</li>
-                    </ul>
-                </div>
+                    <div class="product-card glowing-border">
+                        <div class="product-icon"><i data-lucide="flower"></i></div>
+                        <h3 data-en="Moisturizers" data-pt="Hidratantes">Moisturizers</h3>
+                        <p data-en="Nourishing creams with organic oils and natural humectants. Perfect hydration for every skin type."
+                           data-pt="Cremes nutritivos com óleos orgânicos e umectantes naturais. Hidratação perfeita para cada tipo de pele.">
+                           Nourishing creams with organic oils and natural humectants. Perfect hydration for every skin type.
+                        </p>
+                    </div>
 
-                <div class="product-card">
-                    <div class="product-icon">🌺</div>
-                    <h3 data-en="Body Care" data-pt="Cuidados Corporais">Body Care</h3>
-                    <p data-en="Luxurious body lotions and oils crafted from nature's finest ingredients. Whole-body wellness."
-                       data-pt="Loções e óleos corporais luxuosos feitos com os melhores ingredientes da natureza. Bem-estar corporal completo.">
-                       Luxurious body lotions and oils crafted from nature's finest ingredients. Whole-body wellness.
+                    <div class="product-card glowing-border">
+                        <div class="product-icon"><i data-lucide="leaf"></i></div>
+                        <h3 data-en="Cleansers" data-pt="Limpadores">Cleansers</h3>
+                        <p data-en="Gentle yet effective cleansing formulas with plant-based surfactants. Clean beauty, naturally."
+                           data-pt="Fórmulas de limpeza suaves, mas eficazes, com surfactantes à base de plantas. Beleza limpa, naturalmente.">
+                           Gentle yet effective cleansing formulas with plant-based surfactants. Clean beauty, naturally.
+                        </p>
+                    </div>
+
+                    <div class="product-card glowing-border">
+                        <div class="product-icon"><i data-lucide="rose"></i></div>
+                        <h3 data-en="Body Care" data-pt="Cuidados Corporais">Body Care</h3>
+                        <p data-en="Luxurious body lotions and oils crafted from nature's finest ingredients. Whole-body wellness."
+                           data-pt="Loções e óleos corporais luxuosos feitos com os melhores ingredientes da natureza. Bem-estar corporal completo.">
+                           Luxurious body lotions and oils crafted from nature's finest ingredients. Whole-body wellness.
+                        </p>
+                    </div>
+                </div>
+                <div class="customization-prompt">
+                    <button class="cta-button" data-en="Start Customizing" data-pt="Iniciar Personalização">Start Customizing</button>
+                </div>
+            </div>
+
+            <div id="haircare" class="product-category">
+                <div class="product-grid">
+                    <div class="product-card glowing-border">
+                        <div class="product-icon"><i data-lucide="sparkles"></i></div>
+                        <h3 data-en="Shampoos" data-pt="Shampoos">Shampoos</h3>
+                        <p data-en="Gentle, sulfate-free shampoos to cleanse and nourish your hair."
+                           data-pt="Shampoos suaves e sem sulfato para limpar e nutrir o seu cabelo.">
+                           Gentle, sulfate-free shampoos to cleanse and nourish your hair.
+                        </p>
+                    </div>
+                    <div class="product-card glowing-border">
+                        <div class="product-icon"><i data-lucide="leaf"></i></div>
+                        <h3 data-en="Conditioners" data-pt="Condicionadores">Conditioners</h3>
+                        <p data-en="Rich, creamy conditioners to hydrate and detangle your hair."
+                           data-pt="Condicionadores ricos e cremosos para hidratar e desembaraçar o seu cabelo.">
+                           Rich, creamy conditioners to hydrate and detangle your hair.
+                        </p>
+                    </div>
+                </div>
+                <div class="customization-prompt">
+                    <button class="cta-button" data-en="Start Customizing" data-pt="Iniciar Personalização">Start Customizing</button>
+                </div>
+            </div>
+
+            <div id="customization-process" class="customization-process">
+                <div class="step active" id="step1">
+                    <h3 data-en="Step 1: Choose Your Base" data-pt="Passo 1: Escolha a sua Base">Step 1: Choose Your Base</h3>
+                    <div class="options-grid">
+                        <div class="option-card" data-choice="gel-cleanser">
+                            <div class="option-icon"><i data-lucide="droplet"></i></div>
+                            <h4 data-en="Gel Cleanser" data-pt="Gel de Limpeza">Gel Cleanser</h4>
+                        </div>
+                        <div class="option-card" data-choice="cream-moisturizer">
+                            <div class="option-icon"><i data-lucide="box"></i></div>
+                            <h4 data-en="Cream Moisturizer" data-pt="Creme Hidratante">Cream Moisturizer</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="step" id="step2">
+                    <h3 data-en="Step 2: Add Active Ingredients" data-pt="Passo 2: Adicione Ingredientes Ativos">Step 2: Add Active Ingredients</h3>
+                    <div class="options-grid">
+                        <div class="option-card" data-choice="vitamin-c">
+                            <div class="option-icon"><i data-lucide="sun"></i></div>
+                            <h4 data-en="Vitamin C" data-pt="Vitamina C">Vitamin C</h4>
+                        </div>
+                        <div class="option-card" data-choice="hyaluronic-acid">
+                            <div class="option-icon"><i data-lucide="droplets"></i></div>
+                            <h4 data-en="Hyaluronic Acid" data-pt="Ácido Hialurônico">Hyaluronic Acid</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="step" id="step3">
+                    <h3 data-en="Step 3: Select a Fragrance" data-pt="Passo 3: Selecione uma Fragrância">Step 3: Select a Fragrance</h3>
+                    <div class="options-grid">
+                        <div class="option-card" data-choice="lavender">
+                            <div class="option-icon"><i data-lucide="flower-2"></i></div>
+                            <h4 data-en="Lavender" data-pt="Lavanda">Lavender</h4>
+                        </div>
+                        <div class="option-card" data-choice="eucalyptus">
+                            <div class="option-icon"><i data-lucide="leaf"></i></div>
+                            <h4 data-en="Eucalyptus" data-pt="Eucalipto">Eucalyptus</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="customization-summary">
+                    <h4 data-en="Your Custom Product" data-pt="O seu Produto Personalizado">Your Custom Product</h4>
+                    <p id="summary-text" data-en="Your custom product: " data-pt="O seu produto personalizado: "></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Gallery -->
+    <section id="ingredients" class="ingredients">
+        <div class="container">
+            <h2 data-en="Our Natural Ingredients" data-pt="Nossos Ingredientes Naturais">Our Natural Ingredients</h2>
+            <p class="section-subtitle"
+               data-en="Pure, potent, and sustainably sourced"
+               data-pt="Puros, potentes e de origem sustentável">
+               Pure, potent, and sustainably sourced
+            </p>
+            <div class="ingredient-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon"><i data-lucide="grapes"></i></div>
+                    <h3 data-en="Grape Seed Oil" data-pt="Óleo de Semente de Uva">Grape Seed Oil</h3>
+                    <p data-en="A light, non-greasy oil rich in antioxidants."
+                       data-pt="Um óleo leve e não gorduroso, rico em antioxidantes.">
+                       A light, non-greasy oil rich in antioxidants.
                     </p>
-                    <ul class="product-features">
-                        <li data-en="Natural Fragrances" data-pt="Fragrâncias Naturais">Natural Fragrances</li>
-                        <li data-en="Fast Absorption" data-pt="Absorção Rápida">Fast Absorption</li>
-                        <li data-en="Vegan Formula" data-pt="Fórmula Vegana">Vegan Formula</li>
-                    </ul>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon"><i data-lucide="coconut"></i></div>
+                    <h3 data-en="Coconut Oil" data-pt="Óleo de Coco">Coconut Oil</h3>
+                    <p data-en="A deeply moisturizing oil with a creamy texture."
+                       data-pt="Um óleo profundamente hidratante com uma textura cremosa.">
+                       A deeply moisturizing oil with a creamy texture.
+                    </p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon"><i data-lucide="carrot"></i></div>
+                    <h3 data-en="Avocado Oil" data-pt="Óleo de Abacate">Avocado Oil</h3>
+                    <p data-en="A rich, nourishing oil for dry and sensitive skin."
+                       data-pt="Um óleo rico e nutritivo para peles secas e sensíveis.">
+                       A rich, nourishing oil for dry and sensitive skin.
+                    </p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon"><i data-lucide="citrus"></i></div>
+                    <h3 data-en="Lemon Extract" data-pt="Extrato de Limão">Lemon Extract</h3>
+                    <p data-en="A natural brightener that helps even out skin tone."
+                       data-pt="Um clareador natural que ajuda a uniformizar o tom da pele.">
+                       A natural brightener that helps even out skin tone.
+                    </p>
                 </div>
             </div>
         </div>
@@ -142,7 +250,7 @@
             <div class="packaging-content">
                 <div class="packaging-features">
                     <div class="feature-item">
-                        <div class="feature-icon">♻️</div>
+                        <div class="feature-icon"><i data-lucide="recycle"></i></div>
                         <h3 data-en="100% Recyclable" data-pt="100% Reciclável">100% Recyclable</h3>
                         <p data-en="Made from premium glass and aluminum that can be endlessly recycled without quality loss."
                            data-pt="Feito de vidro e alumínio premium que pode ser reciclado infinitamente sem perda de qualidade.">
@@ -151,7 +259,7 @@
                     </div>
 
                     <div class="feature-item">
-                        <div class="feature-icon">🔄</div>
+                        <div class="feature-icon"><i data-lucide="repeat"></i></div>
                         <h3 data-en="Refill Program" data-pt="Programa de Recarga">Refill Program</h3>
                         <p data-en="Return your containers for a discount on refills. Reduce waste, save money, protect the planet."
                            data-pt="Devolva seus recipientes para desconto em recargas. Reduza o desperdício, economize dinheiro, proteja o planeta.">
@@ -160,7 +268,7 @@
                     </div>
 
                     <div class="feature-item">
-                        <div class="feature-icon">✨</div>
+                        <div class="feature-icon"><i data-lucide="award"></i></div>
                         <h3 data-en="Premium Design" data-pt="Design Premium">Premium Design</h3>
                         <p data-en="Elegant, minimalist containers that look beautiful on your shelf and protect product integrity."
                            data-pt="Recipientes elegantes e minimalistas que ficam lindos na sua prateleira e protegem a integridade do produto.">
@@ -169,7 +277,7 @@
                     </div>
 
                     <div class="feature-item">
-                        <div class="feature-icon">🌍</div>
+                        <div class="feature-icon"><i data-lucide="globe"></i></div>
                         <h3 data-en="Carbon Neutral" data-pt="Carbono Neutro">Carbon Neutral</h3>
                         <p data-en="We offset all emissions from packaging production and shipping through verified environmental projects."
                            data-pt="Compensamos todas as emissões da produção e envio de embalagens através de projetos ambientais verificados.">
@@ -187,19 +295,19 @@
             <h2 data-en="Our Values" data-pt="Nossos Valores">Our Values</h2>
             <div class="values-grid">
                 <div class="value-card">
-                    <h3 data-en="🌱 Natural" data-pt="🌱 Natural">🌱 Natural</h3>
+                    <h3><i data-lucide='leaf'></i> <span data-en="Natural" data-pt="Natural">Natural</span></h3>
                     <p data-en="Only the finest botanical ingredients" data-pt="Apenas os melhores ingredientes botânicos">Only the finest botanical ingredients</p>
                 </div>
                 <div class="value-card">
-                    <h3 data-en="🔬 Effective" data-pt="🔬 Eficaz">🔬 Effective</h3>
+                    <h3><i data-lucide='flask-conical'></i> <span data-en="Effective" data-pt="Eficaz">Effective</span></h3>
                     <p data-en="Science-backed formulations that work" data-pt="Formulações cientificamente comprovadas">Science-backed formulations that work</p>
                 </div>
                 <div class="value-card">
-                    <h3 data-en="♻️ Sustainable" data-pt="♻️ Sustentável">♻️ Sustainable</h3>
+                    <h3><i data-lucide='recycle'></i> <span data-en="Sustainable" data-pt="Sustentável">Sustainable</span></h3>
                     <p data-en="Zero-waste packaging solutions" data-pt="Soluções de embalagem zero desperdício">Zero-waste packaging solutions</p>
                 </div>
                 <div class="value-card">
-                    <h3 data-en="🎨 Custom" data-pt="🎨 Personalizado">🎨 Custom</h3>
+                    <h3><i data-lucide='palette'></i> <span data-en="Custom" data-pt="Personalizado">Custom</span></h3>
                     <p data-en="Tailored to your unique needs" data-pt="Adaptado às suas necessidades únicas">Tailored to your unique needs</p>
                 </div>
             </div>
@@ -211,7 +319,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>🌿 EcoEssence</h3>
+                    <h3><i data-lucide="leaf"></i> EcoEssence</h3>
                     <p data-en="Natural beauty, sustainably delivered" data-pt="Beleza natural, entregue de forma sustentável">Natural beauty, sustainably delivered</p>
                 </div>
                 <div class="footer-section">
@@ -222,9 +330,9 @@
                 <div class="footer-section">
                     <h4 data-en="Follow Us" data-pt="Siga-nos">Follow Us</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -235,5 +343,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

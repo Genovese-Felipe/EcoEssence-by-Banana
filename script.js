@@ -50,6 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Product tabs functionality
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const productCategories = document.querySelectorAll('.product-category');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category;
+
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            productCategories.forEach(cat => {
+                if (cat.id === category) {
+                    cat.classList.add('active');
+                } else {
+                    cat.classList.remove('active');
+                }
+            });
+        });
+    });
     
     // Add scroll animation for elements
     const observerOptions = {
@@ -114,6 +135,57 @@ document.addEventListener('DOMContentLoaded', () => {
             this.style.borderLeft = 'none';
         });
     });
+
+    // Customization process functionality
+    const customizationProcess = document.getElementById('customization-process');
+    const startCustomizingButtons = document.querySelectorAll('.customization-prompt .cta-button');
+    const steps = customizationProcess.querySelectorAll('.step');
+    const optionCards = customizationProcess.querySelectorAll('.option-card');
+    const summaryText = document.getElementById('summary-text');
+
+    let currentStep = 1;
+    let userChoices = {};
+
+    startCustomizingButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            customizationProcess.style.display = 'block';
+            showStep(1);
+        });
+    });
+
+    optionCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const choice = card.dataset.choice;
+            userChoices[`step${currentStep}`] = choice;
+
+            const currentOptions = steps[currentStep - 1].querySelectorAll('.option-card');
+            currentOptions.forEach(opt => opt.classList.remove('selected'));
+            card.classList.add('selected');
+
+            if (currentStep < 3) {
+                currentStep++;
+                showStep(currentStep);
+            } else {
+                updateSummary();
+            }
+        });
+    });
+
+    function showStep(stepNumber) {
+        steps.forEach((step, index) => {
+            if (index + 1 === stepNumber) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
+        });
+        currentStep = stepNumber;
+    }
+
+    function updateSummary() {
+        const summaryPrefix = summaryText.getAttribute(`data-${currentLanguage}`);
+        summaryText.textContent = `${summaryPrefix}${userChoices.step1}, ${userChoices.step2}, ${userChoices.step3}`;
+    }
     
     // Console message
     console.log('%c🌿 EcoEssence by Google Nanobanana', 'font-size: 20px; color: #2d5016; font-weight: bold;');
