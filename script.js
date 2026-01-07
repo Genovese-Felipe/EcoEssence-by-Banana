@@ -75,7 +75,23 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
     
-    // Mobile menu toggle (for future implementation)
+    // Mobile menu functionality
+    const menuButton = document.getElementById('menu-button');
+    const closeMenuButton = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+    }
+
+    if (closeMenuButton && mobileMenu) {
+        closeMenuButton.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    }
+
     const navBrand = document.querySelector('.nav-brand');
     if (navBrand) {
         navBrand.style.cursor = 'pointer';
@@ -120,13 +136,35 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%cCustom natural cosmetics with sustainable packaging', 'font-size: 14px; color: #6b8e23;');
 });
 
+// Function to close the mobile menu
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.classList.add('hidden');
+    }
+}
+
 // Prevent default behavior for social links (since they're placeholders)
 document.querySelectorAll('.social-links a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const message = currentLanguage === 'en' 
-            ? 'Social media links coming soon!' 
+        const message = currentLanguage === 'en'
+            ? 'Social media links coming soon!'
             : 'Links de redes sociais em breve!';
         alert(message);
     });
 });
+
+// Newsletter form submission
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = newsletterForm.querySelector('.newsletter-input');
+        const message = currentLanguage === 'en'
+            ? `Thank you for subscribing, ${input.value}!`
+            : `Obrigado por se inscrever, ${input.value}!`;
+        alert(message);
+        input.value = '';
+    });
+}
