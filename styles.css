@@ -364,6 +364,56 @@ body {
     color: var(--text-light);
 }
 
+/* Customer Relationships Section */
+.customer-relationships {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.customer-relationships h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.relationship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.relationship-card {
+    background: var(--light-green);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border-left: 5px solid transparent;
+}
+
+.relationship-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.relationship-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.relationship-card h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.relationship-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
 /* Footer */
 .footer {
     background: var(--primary-color);
