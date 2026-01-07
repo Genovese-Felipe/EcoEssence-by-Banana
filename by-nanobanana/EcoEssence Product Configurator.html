@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurador - EcoEssence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #2a5242;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #4CAF50;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 2px solid #4CAF50;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .bg-eco-light {
+            background-color: #f0fdf4;
+        }
+        .text-eco-dark {
+            color: #2a5242;
+        }
+        .nav-link {
+            color: #2a5242;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4CAF50;
+        }
+        .footer-bg {
+            background-color: #2a5242;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .option-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+        .option-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .option-card.selected {
+            border-color: #4CAF50;
+            background-color: #f0fdf4;
+        }
+        .progress-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            transition: width 0.3s ease;
+        }
+        .ingredient-option {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .ingredient-option.selected {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-12 flex justify-between items-center fixed w-full z-10 top-0">
+        <div class="flex items-center">
+            <div class="h-10 w-10 mr-3 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold text-lg">E</div>
+            <a href="index.html" class="text-2xl font-bold text-eco-dark">EcoEssence</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="index.html" class="nav-link text-lg font-medium">Início</a>
+            <a href="products.html" class="nav-link text-lg font-medium">Produtos</a>
+            <a href="sustainability.html" class="nav-link text-lg font-medium">Sustentabilidade</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="pt-24 pb-16 bg-eco-light min-h-screen">
+        <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+            
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between mb-2">
+                    <span class="text-sm font-medium text-eco-dark">Passo <span id="current-step">1</span> de 5</span>
+                    <span class="text-sm font-medium text-eco-dark"><span id="progress-percent">20</span>%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <!-- Step 1: Product Type -->
+            <div class="step active" id="step-1">
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h2 class="text-4xl font-bold mb-4 text-eco-dark text-center">Qual produto você deseja criar?</h2>
+                    <p class="text-xl text-gray-600 mb-8 text-center">Escolha a categoria que melhor atende suas necessidades</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="skincare">
+                            <div class="flex items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4"><circle cx="12" cy="12" r="10"/></svg>
+                                <h3 class="text-2xl font-bold text-eco-dark">Skincare</h3>
+                            </div>
+                            <p class="text-gray-600">Séruns, cremes faciais, hidratantes e tratamentos para a pele.</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="haircare">
+                            <div class="flex items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4"><path d="M12 2v20"/><path d="M8 2v20"/><path d="M16 2v20"/></svg>
+                                <h3 class="text-2xl font-bold text-eco-dark">Haircare</h3>
+                            </div>
+                            <p class="text-gray-600">Shampoos, condicionadores, máscaras e tratamentos capilares.</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="bodycare">
+                            <div class="flex items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M12 12v10"/></svg>
+                                <h3 class="text-2xl font-bold text-eco-dark">Body Care</h3>
+                            </div>
+                            <p class="text-gray-600">Hidratantes corporais, óleos, esfoliantes e manteigas.</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="wellness">
+                            <div class="flex items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                <h3 class="text-2xl font-bold text-eco-dark">Wellness</h3>
+                            </div>
+                            <p class="text-gray-600">Aromaterapia, óleos essenciais e produtos para relaxamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Skin/Hair Type -->
+            <div class="step" id="step-2">
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h2 class="text-4xl font-bold mb-4 text-eco-dark text-center">Qual é o seu tipo de pele/cabelo?</h2>
+                    <p class="text-xl text-gray-600 mb-8 text-center">Isso nos ajuda a criar a fórmula perfeita para você</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="oily">
+                            <div class="text-5xl mb-3">💧</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Oleosa</h3>
+                            <p class="text-gray-600">Brilho excessivo, poros dilatados</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="dry">
+                            <div class="text-5xl mb-3">🏜️</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Seca</h3>
+                            <p class="text-gray-600">Ressecamento, descamação</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="combination">
+                            <div class="text-5xl mb-3">⚖️</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Mista</h3>
+                            <p class="text-gray-600">Zona T oleosa, bochechas secas</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="sensitive">
+                            <div class="text-5xl mb-3">🌸</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Sensível</h3>
+                            <p class="text-gray-600">Irritação fácil, vermelhidão</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="normal">
+                            <div class="text-5xl mb-3">✨</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Normal</h3>
+                            <p class="text-gray-600">Equilibrada, sem problemas</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="mature">
+                            <div class="text-5xl mb-3">🌟</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Madura</h3>
+                            <p class="text-gray-600">Sinais de envelhecimento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Concerns -->
+            <div class="step" id="step-3">
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h2 class="text-4xl font-bold mb-4 text-eco-dark text-center">Quais são suas principais preocupações?</h2>
+                    <p class="text-xl text-gray-600 mb-8 text-center">Selecione até 3 opções</p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="acne">
+                            <div class="text-3xl mb-2">🎯</div>
+                            <p class="font-medium">Acne</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="wrinkles">
+                            <div class="text-3xl mb-2">⏰</div>
+                            <p class="font-medium">Rugas</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="dark-spots">
+                            <div class="text-3xl mb-2">☀️</div>
+                            <p class="font-medium">Manchas</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="dryness">
+                            <div class="text-3xl mb-2">💦</div>
+                            <p class="font-medium">Ressecamento</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="dullness">
+                            <div class="text-3xl mb-2">✨</div>
+                            <p class="font-medium">Opacidade</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="sensitivity">
+                            <div class="text-3xl mb-2">🌸</div>
+                            <p class="font-medium">Sensibilidade</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="pores">
+                            <div class="text-3xl mb-2">🔍</div>
+                            <p class="font-medium">Poros</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="redness">
+                            <div class="text-3xl mb-2">🔴</div>
+                            <p class="font-medium">Vermelhidão</p>
+                        </div>
+                        <div class="ingredient-option bg-eco-light rounded-lg p-4 text-center" data-value="firmness">
+                            <div class="text-3xl mb-2">💪</div>
+                            <p class="font-medium">Firmeza</p>
+                        </div>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-4">Selecionados: <span id="concern-count">0</span>/3</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Ingredients -->
+            <div class="step" id="step-4">
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h2 class="text-4xl font-bold mb-4 text-eco-dark text-center">Escolha seus ingredientes favoritos</h2>
+                    <p class="text-xl text-gray-600 mb-8 text-center">Selecione os ingredientes que você ama</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="aloe">
+                            <div class="flex items-center mb-3">
+                                <div class="text-4xl mr-4">🌿</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-eco-dark">Aloe Vera</h3>
+                                    <p class="text-sm text-gray-600">Hidratante, calmante</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="vitamin-c">
+                            <div class="flex items-center mb-3">
+                                <div class="text-4xl mr-4">🍊</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-eco-dark">Vitamina C</h3>
+                                    <p class="text-sm text-gray-600">Iluminador, antioxidante</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="hyaluronic">
+                            <div class="flex items-center mb-3">
+                                <div class="text-4xl mr-4">💧</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-eco-dark">Ácido Hialurônico</h3>
+                                    <p class="text-sm text-gray-600">Hidratação profunda</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="argan">
+                            <div class="flex items-center mb-3">
+                                <div class="text-4xl mr-4">🥜</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-eco-dark">Óleo de Argan</h3>
+                                    <p class="text-sm text-gray-600">Nutritivo, reparador</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="rosehip">
+                            <div class="flex items-center mb-3">
+                                <div class="text-4xl mr-4">🌹</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-eco-dark">Rosa Mosqueta</h3>
+                                    <p class="text-sm text-gray-600">Regenerador, clareador</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6" data-value="shea">
+                            <div class="flex items-center mb-3">
+                                <div class="text-4xl mr-4">🧈</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-eco-dark">Manteiga de Karité</h3>
+                                    <p class="text-sm text-gray-600">Hidratante, protetor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Fragrance -->
+            <div class="step" id="step-5">
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h2 class="text-4xl font-bold mb-4 text-eco-dark text-center">Escolha sua fragrância</h2>
+                    <p class="text-xl text-gray-600 mb-8 text-center">Ou opte por sem fragrância</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="lavender">
+                            <div class="text-5xl mb-3">💜</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Lavanda</h3>
+                            <p class="text-gray-600">Relaxante e calmante</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="citrus">
+                            <div class="text-5xl mb-3">🍋</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Cítrico</h3>
+                            <p class="text-gray-600">Energizante e refrescante</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="rose">
+                            <div class="text-5xl mb-3">🌹</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Rosa</h3>
+                            <p class="text-gray-600">Floral e elegante</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="mint">
+                            <div class="text-5xl mb-3">🌿</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Menta</h3>
+                            <p class="text-gray-600">Revigorante e fresco</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="vanilla">
+                            <div class="text-5xl mb-3">🍦</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Baunilha</h3>
+                            <p class="text-gray-600">Doce e aconchegante</p>
+                        </div>
+                        
+                        <div class="option-card bg-white border rounded-lg p-6 text-center" data-value="unscented">
+                            <div class="text-5xl mb-3">🚫</div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-2">Sem Fragrância</h3>
+                            <p class="text-gray-600">Para peles sensíveis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Step -->
+            <div class="step" id="step-summary">
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h2 class="text-4xl font-bold mb-4 text-eco-dark">Seu Produto Personalizado Está Pronto!</h2>
+                        <p class="text-xl text-gray-600">Confira o resumo da sua fórmula exclusiva</p>
+                    </div>
+                    
+                    <div class="bg-eco-light rounded-lg p-6 mb-6">
+                        <h3 class="text-2xl font-bold text-eco-dark mb-4">Resumo da Personalização</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="font-medium">Categoria:</span>
+                                <span id="summary-type" class="text-eco-dark font-bold">-</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Tipo:</span>
+                                <span id="summary-skin-type" class="text-eco-dark font-bold">-</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Preocupações:</span>
+                                <span id="summary-concerns" class="text-eco-dark font-bold">-</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Ingredientes:</span>
+                                <span id="summary-ingredients" class="text-eco-dark font-bold">-</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Fragrância:</span>
+                                <span id="summary-fragrance" class="text-eco-dark font-bold">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-6">
+                        <h3 class="text-2xl font-bold text-eco-dark mb-4">Preço</h3>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-gray-600">Produto + Embalagem Premium</p>
+                                <p class="text-sm text-gray-500">Refis futuros: 60% de desconto</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-4xl font-bold text-green-600">R$ 189,90</p>
+                                <p class="text-sm text-gray-500">ou 3x de R$ 63,30</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <button class="btn-primary flex-1 text-lg py-4" onclick="alert('Produto adicionado ao carrinho! 🛒')">
+                            Adicionar ao Carrinho
+                        </button>
+                        <button class="btn-secondary flex-1 text-lg py-4" onclick="location.reload()">
+                            Criar Outro Produto
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between mt-8">
+                <button id="prev-btn" class="btn-secondary" style="display: none;">
+                    ← Voltar
+                </button>
+                <button id="next-btn" class="btn-primary ml-auto" style="display: none;">
+                    Próximo →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 5;
+        const selections = {
+            type: '',
+            skinType: '',
+            concerns: [],
+            ingredients: [],
+            fragrance: ''
+        };
+
+        // Initialize
+        document.getElementById('prev-btn').style.display = 'none';
+        document.getElementById('next-btn').style.display = 'none';
+
+        // Option card selection (single choice)
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const step = this.closest('.step');
+                step.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                const value = this.dataset.value;
+                const stepId = step.id;
+                
+                if (stepId === 'step-1') selections.type = value;
+                if (stepId === 'step-2') selections.skinType = value;
+                if (stepId === 'step-4') {
+                    if (selections.ingredients.includes(value)) {
+                        selections.ingredients = selections.ingredients.filter(i => i !== value);
+                    } else {
+                        selections.ingredients.push(value);
+                    }
+                }
+                if (stepId === 'step-5') selections.fragrance = value;
+                
+                setTimeout(() => nextStep(), 500);
+            });
+        });
+
+        // Ingredient options (multiple choice with limit)
+        document.querySelectorAll('.ingredient-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const value = this.dataset.value;
+                
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    selections.concerns = selections.concerns.filter(c => c !== value);
+                } else {
+                    if (selections.concerns.length < 3) {
+                        this.classList.add('selected');
+                        selections.concerns.push(value);
+                    }
+                }
+                
+                document.getElementById('concern-count').textContent = selections.concerns.length;
+                
+                if (selections.concerns.length > 0) {
+                    document.getElementById('next-btn').style.display = 'block';
+                } else {
+                    document.getElementById('next-btn').style.display = 'none';
+                }
+            });
+        });
+
+        function updateProgress() {
+            const percent = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-percent').textContent = Math.round(percent);
+            document.getElementById('current-step').textContent = currentStep;
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-' + step).classList.add('active');
+            
+            if (step === 1) {
+                document.getElementById('prev-btn').style.display = 'none';
+            } else {
+                document.getElementById('prev-btn').style.display = 'block';
+            }
+            
+            if (step === 3 && selections.concerns.length > 0) {
+                document.getElementById('next-btn').style.display = 'block';
+            } else if (step === 3) {
+                document.getElementById('next-btn').style.display = 'none';
+            } else if (step < totalSteps) {
+                document.getElementById('next-btn').style.display = 'none';
+            }
+            
+            if (step === 'summary') {
+                document.getElementById('prev-btn').style.display = 'none';
+                document.getElementById('next-btn').style.display = 'none';
+                showSummary();
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateProgress();
+                showStep(currentStep);
+            } else {
+                showStep('summary');
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateProgress();
+                showStep(currentStep);
+            }
+        }
+
+        function showSummary() {
+            const typeNames = {
+                'skincare': 'Skincare',
+                'haircare': 'Haircare',
+                'bodycare': 'Body Care',
+                'wellness': 'Wellness'
+            };
+            
+            const skinTypeNames = {
+                'oily': 'Oleosa',
+                'dry': 'Seca',
+                'combination': 'Mista',
+                'sensitive': 'Sensível',
+                'normal': 'Normal',
+                'mature': 'Madura'
+            };
+            
+            const fragranceNames = {
+                'lavender': 'Lavanda',
+                'citrus': 'Cítrico',
+                'rose': 'Rosa',
+                'mint': 'Menta',
+                'vanilla': 'Baunilha',
+                'unscented': 'Sem Fragrância'
+            };
+            
+            document.getElementById('summary-type').textContent = typeNames[selections.type] || '-';
+            document.getElementById('summary-skin-type').textContent = skinTypeNames[selections.skinType] || '-';
+            document.getElementById('summary-concerns').textContent = selections.concerns.join(', ') || '-';
+            document.getElementById('summary-ingredients').textContent = selections.ingredients.join(', ') || '-';
+            document.getElementById('summary-fragrance').textContent = fragranceNames[selections.fragrance] || '-';
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', prevStep);
+        document.getElementById('next-btn').addEventListener('click', nextStep);
+    </script>
+
+</body>
+</html>

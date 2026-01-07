@@ -1,0 +1,559 @@
+import React, { useState } from 'react';
+import { Home, Building2, Info, Contact, Star, Wrench, Globe, Users, Award, MessageSquare, MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const HomePage = () => (
+  <div className="p-8">
+    <h1 className="text-4xl font-bold mb-4">Bem-vindo à IntelliBuild AI</h1>
+    <p className="text-lg mb-6">IntelliBuild AI é uma marca fictícia inovadora que combina inteligência artificial com arquitetura e construção civil. Nossa missão é revolucionar reformas e projetos de construção por meio de soluções sustentáveis e eficientes impulsionadas por IA. Exploramos oportunidades no mercado brasileiro de retrofits inteligentes, integrando IoT, machine learning e dados de eficiência energética para criar ambientes residenciais e comerciais mais inteligentes e sustentáveis. Com o avanço da tecnologia, estamos na vanguarda de uma indústria que se transforma rapidamente, oferecendo ferramentas que não apenas otimizam processos, mas também promovem um futuro mais verde e eficiente.</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Oportunidade Identificada</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Baseado em conhecimentos de IA aplicada à construção, identificamos uma oportunidade em retrofits inteligentes para residências no Brasil. Com o crescimento do mercado de casas inteligentes (projetado para crescer 15% ao ano até 2030, segundo relatórios de mercado como os da Statista e McKinsey), integramos IoT e machine learning para otimização energética, redução de custos e gerenciamento de projetos ágeis. Isso inclui adaptações para o clima tropical brasileiro, onde a eficiência energética pode reduzir contas de luz em até 40%.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Nossa Visão</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Transformar a indústria da construção civil com ferramentas de IA que reduzem custos em até 30%, melhoram a sustentabilidade através de designs eco-friendly e aceleram o tempo de execução de projetos em 40%, conforme tendências globais adaptadas ao contexto brasileiro. Visamos impactar positivamente a sociedade, promovendo construções que sejam acessíveis, inteligentes e alinhadas com metas de desenvolvimento sustentável da ONU.</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Principais Recursos</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Wrench size={24} /> <span>Otimização de Projetos</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Algoritmos de IA que analisam dados de projetos para sugerir otimizações em tempo real, reduzindo desperdícios e melhorando a eficiência. Inclui simulações 3D e previsão de materiais necessários, minimizando erros humanos e acelerando aprovações.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Star size={24} /> <span>Gestão Sustentável</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Ferramentas para monitoramento de consumo energético, integrando sensores IoT para promover construções verdes e certificações LEED. Oferecemos análises de ciclo de vida de materiais e recomendações para fontes renováveis, ajudando a alcançar neutralidade de carbono.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Building2 size={24} /> <span>Retrofits Inteligentes</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Soluções personalizadas para modernizar edifícios existentes, incorporando automação residencial e análise preditiva de manutenção. Isso inclui integração com assistentes virtuais como Alexa ou Google Home para controle intuitivo de ambientes.</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Benefícios da IA na Construção</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Globe size={24} /> <span>Impacto Global</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Redução de emissões de CO2 através de designs otimizados.</li>
+            <li>Aumento da produtividade em canteiros de obra com automação.</li>
+            <li>Adaptação a regulamentações internacionais de sustentabilidade.</li>
+          </ul>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Users size={24} /> <span>Benefícios para Usuários</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Economia financeira a longo prazo com eficiência energética.</li>
+            <li>Melhor qualidade de vida em ambientes inteligentes e confortáveis.</li>
+            <li>Acesso a dados em tempo real para decisões informadas.</li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Casos de Sucesso Fictícios</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <Card>
+        <CardContent>
+          <p className="italic">"Transformamos um prédio antigo em São Paulo em um hub inteligente, reduzindo custos em 35%!" - Projeto Residencial</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent>
+          <p className="italic">"Nossa parceria com IntelliBuild otimizou nosso portfólio imobiliário sustentável." - Desenvolvedora Imobiliária</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent>
+          <p className="italic">"A IA deles previu e evitou atrasos em nossa reforma comercial." - Empresa de Construção</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Depoimentos Fictícios</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <Card>
+        <CardContent>
+          <p className="italic">"A IntelliBuild transformou nossa reforma em um processo eficiente e sustentável!" - Cliente Satisfeito</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent>
+          <p className="italic">"Com a IA deles, reduzimos custos em 25% no nosso projeto imobiliário." - Desenvolvedor Parceiro</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent>
+          <p className="italic">"Excelente suporte e inovação que superaram nossas expectativas." - Arquiteto Independente</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent>
+          <p className="italic">"Recomendo para qualquer projeto que busque sustentabilidade e eficiência." - Engenheiro Civil</p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+);
+
+const BusinessModelPage = () => (
+  <div className="p-8">
+    <h1 className="text-4xl font-bold mb-4">Canvas de Modelo de Negócios</h1>
+    <p className="text-lg mb-6">A seguir, uma análise detalhada e expandida do modelo de negócios da IntelliBuild AI, estruturada no framework Business Model Canvas. Esta análise foi validada com base em conhecimentos de bases de dados sobre IA, construção civil, reformas e tendências de mercado (como integração de IA em casas inteligentes, gerenciamento de projetos ágeis e eficiência energética). Pesquisas complementares indicam um crescimento acelerado no mercado de construção inteligente no Brasil, impulsionado pela adoção de tecnologias como IoT e ML, com marcas como Autodesk, Siemens e startups locais como a Construtech oferecendo soluções semelhantes. No entanto, a IntelliBuild se diferencia com foco em IA personalizada para o contexto socioeconômico brasileiro, incluindo adaptações para climas tropicais, regulamentações locais e integração com políticas de habitação popular.</p>
+    <div className="border border-gray-300 rounded-md overflow-hidden mb-8">
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 bg-gray-100 p-2 font-bold border-b border-r">Componente</div>
+        <div className="col-span-4 bg-gray-100 p-2 font-bold border-b">Descrição Detalhada</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Segmentos de Clientes</div>
+        <div className="col-span-4 p-2 border-b">Proprietários de residências urbanas e rurais buscando retrofits inteligentes para economia de energia e conforto; Desenvolvedores imobiliários em expansão no setor de living as a service, incluindo condomínios multifamiliares; Arquitetos e engenheiros civis independentes ou em firmas especializadas; Empresas de construção focadas em sustentabilidade e inovação, incluindo PMEs, grandes construtoras e até governos locais para projetos públicos no Brasil.</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Proposições de Valor</div>
+        <div className="col-span-4 p-2 border-b">Soluções de IA avançadas para otimização de projetos arquitetônicos, com redução de custos em até 30% via algoritmos de machine learning preditivos que analisam variáveis como clima e materiais locais; Designs sustentáveis que enfatizam eficiência energética e integração de IoT para monitoramento em tempo real, incluindo alertas para manutenção preventiva; Gerenciamento automatizado de reformas, incluindo cronogramas ágeis, análise de riscos e integração com ferramentas como PMBOK; Conteúdo educacional personalizado sobre tecnologias emergentes na construção civil, como cursos online e webinars gratuitos.</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Canais</div>
+        <div className="col-span-4 p-2 border-b">Plataforma web interativa e aplicativo móvel para simulações de projetos e colaboração em equipe; Parcerias estratégicas com fornecedores de materiais como Leroy Merlin, Tigre e Saint-Gobain; Campanhas em redes sociais (LinkedIn, Instagram, YouTube) e marketing digital via SEO, Google Ads e conteúdo influenciador; Participação em eventos de construção (ex: Feicon, Concrete Show) e feiras de tecnologia (ex: CES adaptada ao Brasil, eventos da ABINC para IoT).</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Relacionamentos com Clientes</div>
+        <div className="col-span-4 p-2 border-b">Suporte personalizado 24/7 via chatbots de IA integrados com NLP para respostas contextualizadas; Comunidades online exclusivas para compartilhamento de casos de sucesso, fóruns e networking; Programas de fidelidade com atualizações gratuitas de software, descontos em serviços e acesso a betas exclusivos; Consultoria contínua pós-projeto, incluindo auditorias anuais de eficiência energética e treinamentos personalizados para equipes.</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Fontes de Receita</div>
+        <div className="col-span-4 p-2 border-b">Assinaturas de software escaláveis (R$99/mês para plano básico com ferramentas essenciais, R$499/mês para premium com análises avançadas, integrações e suporte prioritário); Taxas por projeto consultivo (10-15% do valor total da obra, com bônus por economia gerada e pacotes para projetos em escala); Licenciamento de modelos de IA para parceiros empresariais e white-labeling; Vendas de dados analíticos anônimos sobre tendências de mercado, eficiência em construções e benchmarks regionais.</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Recursos Principais</div>
+        <div className="col-span-4 p-2 border-b">Equipe multidisciplinar de especialistas em IA, engenharia civil, design sustentável e dados; Bases de dados proprietárias de projetos, orçamentos, casos de reformas e dados ambientais no Brasil; Algoritmos de machine learning treinados com dados locais, em parceria com Hugging Face, Google AI e datasets open-source; Infraestrutura de nuvem escalável para simulações em grande escala, incluindo GPUs para treinamento de modelos.</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Atividades Principais</div>
+        <div className="col-span-4 p-2 border-b">Desenvolvimento contínuo de software de IA para design arquitetônico, simulações e gerenciamento de projetos; Consultoria especializada em retrofits, automação residencial e integração de sistemas; Análise de dados avançada para otimização de custos, previsão de tendências e relatórios personalizados; Pesquisa e inovação em tecnologias sustentáveis, incluindo parcerias acadêmicas para novas metodologias e publicações em conferências.</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-b border-r">Parcerias Principais</div>
+        <div className="col-span-4 p-2 border-b">Fornecedores de materiais de construção ecológicos (ex: Leroy Merlin, Saint-Gobain, Amanco); Provedores de IA e ML (Google Cloud, Hugging Face para modelos open-source, AWS para infraestrutura); Universidades para pesquisa colaborativa (ex: Unicamp, USP, ITA); Empresas de IoT para integração de hardware (ex: Intelbras, Philips Hue, Siemens Building Technologies).</div>
+      </div>
+      <div className="grid grid-cols-5 gap-0">
+        <div className="col-span-1 p-2 font-medium border-r">Estrutura de Custos</div>
+        <div className="col-span-4 p-2">Desenvolvimento de software e manutenção de IA (40%, incluindo custos com servidores, licenças e atualizações); Marketing e aquisição de clientes (20%, com foco em digital, eventos e parcerias); Pessoal especializado em IA e engenharia (25%, salários, treinamentos e benefícios); Infraestrutura de nuvem e ferramentas (10%, incluindo storage e computação); Pesquisa e desenvolvimento contínuo (5%, parcerias acadêmicas, testes e protótipos).</div>
+      </div>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Análise SWOT</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Forças (Strengths)</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Inovação em IA adaptada ao mercado brasileiro.</li>
+            <li>Equipe experiente e parcerias estratégicas.</li>
+            <li>Foco em sustentabilidade, alinhado a tendências globais.</li>
+          </ul>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Fraquezas (Weaknesses)</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Dependência de tecnologia em evolução rápida.</li>
+            <li>Custos iniciais altos para desenvolvimento.</li>
+            <li>Concorrência de players estabelecidos.</li>
+          </ul>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Oportunidades (Opportunities)</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Crescimento do mercado de construções inteligentes.</li>
+            <li>Subsídios governamentais para projetos sustentáveis.</li>
+            <li>Expansão para mercados emergentes na América Latina.</li>
+          </ul>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Ameaças (Threats)</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Regulamentações ambientais e de dados no Brasil.</li>
+            <li>Flutuações econômicas afetando investimentos em construção.</li>
+            <li>Avanços tecnológicos de competidores.</li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Análise Adicional</h2>
+    <p className="text-lg mb-6">Este modelo de negócios é escalável, com potencial para expansão internacional para países como México e Argentina. Riscos incluem dependência de tecnologia em evolução e regulamentações ambientais no Brasil. Oportunidades incluem subsídios governamentais para construções sustentáveis, parcerias com ONGs e integração com iniciativas como o Programa Minha Casa Minha Vida.</p>
+  </div>
+);
+
+const AboutPage = () => (
+  <div className="p-8">
+    <h1 className="text-4xl font-bold mb-4">Sobre a IntelliBuild AI</h1>
+    <p className="text-lg mb-6">IntelliBuild AI é uma startup fictícia criada para explorar oportunidades no cruzamento de IA e construção civil. Inspirada em tendências como casas inteligentes, gerenciamento de projetos ágeis e eficiência energética (baseado em pesquisas da Unicamp e Vale do Silício), nossa marca foca em soluções premium adaptadas ao mercado brasileiro, considerando contextos culturais, socioeconômicos e ambientais específicos do país.</p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Missão</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Inovar a construção civil com IA sustentável, promovendo qualidade de vida e redução de impactos ambientais através de tecnologias acessíveis e eficientes para todos os segmentos da sociedade.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Visão</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Liderar o mercado de retrofits inteligentes no Brasil até 2030, expandindo para América Latina com soluções que integrem IA em 50% das novas construções, contribuindo para cidades mais inteligentes e sustentáveis.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Valores</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Inovação contínua, sustentabilidade ambiental, eficiência operacional, compromisso com a inclusão social no setor de construção e ética em todas as operações.</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Nossa História</h2>
+    <p className="text-lg mb-6">Fundada em 2025 (ficticiamente), a IntelliBuild surgiu de pesquisas em eficiência energética e automação residencial conduzidas por especialistas com experiência no Vale do Silício e no Brasil. Inspirados por programas como o Piscine da 42 School e teses sobre inteligência residencial, desenvolvemos ferramentas que combinam user-centered design com IA para resolver desafios reais na construção civil, como altos custos e impactos ambientais. Ao longo dos anos, expandimos nosso foco para incluir soluções para reformas complexas e projetos de grande escala.</p>
+    <h2 className="text-3xl font-bold mb-4">Equipe Fictícia</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>João Silva - CEO</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Especialista em IA com background em engenharia civil, liderando inovações em retrofits e estratégias de negócio sustentáveis.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Maria Oliveira - CTO</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Experiente em machine learning, focada em algoritmos para otimização energética e integração de IoT em construções.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Pedro Santos - CMO</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Especialista em marketing digital para tecnologias emergentes no setor de construção, com ênfase em campanhas de conscientização sustentável.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Ana Costa - Head de Pesquisa</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Doutora em sustentabilidade, responsável por parcerias acadêmicas e desenvolvimento de metodologias inovadoras.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Lucas Mendes - Engenheiro Chefe</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Especialista em automação residencial, liderando a implementação de projetos de retrofit inteligentes.</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Nossos Prêmios Fictícios</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Award size={24} /> <span>Prêmio Inovação 2026</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Reconhecimento pela melhor solução de IA em construção sustentável no Brasil.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Award size={24} /> <span>Certificação LEED Ouro</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Para nossos projetos modelo de eficiência energética.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Award size={24} /> <span>Startup do Ano</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Premiada pela ABStartups por impacto no setor construtech.</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Parcerias Estratégicas</h2>
+    <p className="text-lg mb-6">Colaboramos com líderes da indústria para entregar o melhor em tecnologia e sustentabilidade. Nossas parcerias incluem universidades, provedores de IA e fornecedores de materiais, garantindo soluções integradas e inovadoras.</p>
+  </div>
+);
+
+const ServicesPage = () => (
+  <div className="p-8">
+    <h1 className="text-4xl font-bold mb-4">Nossos Serviços</h1>
+    <p className="text-lg mb-6">Oferecemos uma gama completa de serviços impulsionados por IA para transformar seus projetos de construção. De consultorias iniciais a implementações completas, estamos aqui para ajudar.</p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Wrench size={24} /> <span>Consultoria em IA</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Análises personalizadas para otimizar designs e orçamentos, usando machine learning para previsões precisas.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Building2 size={24} /> <span>Retrofits Inteligentes</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Modernização de edifícios com integração de IoT e automação, focando em eficiência e sustentabilidade.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Star size={24} /> <span>Gerenciamento de Projetos</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Ferramentas ágeis para cronogramas, riscos e colaboração em equipe, integradas com plataformas como ClickUp.</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Pacotes de Serviços</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Pacote Básico</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Análise inicial de projeto.</li>
+            <li>Relatório de otimização energética.</li>
+            <li>Suporte básico via chat.</li>
+          </ul>
+          <p className="mt-4 font-bold">R$ 1.999</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Pacote Premium</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5">
+            <li>Consultoria completa com simulações 3D.</li>
+            <li>Integração de IoT e treinamento.</li>
+            <li>Suporte dedicado e auditorias anuais.</li>
+          </ul>
+          <p className="mt-4 font-bold">R$ 9.999</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Estudos de Caso</h2>
+    <div className="space-y-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>Projeto Residencial em São Paulo</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Reduzimos o consumo energético em 45% através de retrofits inteligentes, integrando painéis solares e sensores IoT.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Desenvolvimento Comercial no Rio</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Otimização de custos em 28% com gerenciamento de projetos ágeis e análise preditiva.</p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+);
+
+const ContactPage = () => (
+  <div className="p-8">
+    <h1 className="text-4xl font-bold mb-4">Contato</h1>
+    <p className="text-lg mb-6">Entre em contato conosco para discutir como a IntelliBuild AI pode ajudar no seu próximo projeto de construção ou retrofit inteligente. Nossa equipe está pronta para responder dúvidas, agendar reuniões e fornecer orçamentos personalizados. Estamos aqui para inovar juntos e tornar suas visões em realidade!</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Informações de Contato</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center space-x-2 mb-2"><Mail size={20} /> <p>Email: contato@intellibuild.ai</p></div>
+          <div className="flex items-center space-x-2 mb-2"><Phone size={20} /> <p>Telefone: +55 (11) 1234-5678</p></div>
+          <div className="flex items-center space-x-2"><MapPin size={20} /> <p>Endereço: Rua Fictícia, 123 - São Paulo, SP, Brasil</p></div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Formulário de Contato</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>(Formulário fictício: Envie-nos uma mensagem via email para simular. Inclua seu nome, email, mensagem e tipo de consulta para uma resposta rápida.)</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Nossas Redes Sociais</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Facebook size={24} /> <span>Facebook</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Siga-nos para dicas de construção inteligente.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Twitter size={24} /> <span>Twitter</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Atualizações em tempo real sobre inovações em IA.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2"><Linkedin size={24} /> <span>LinkedIn</span></CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Conecte-se para networking profissional no setor.</p>
+        </CardContent>
+      </Card>
+    </div>
+    <h2 className="text-3xl font-bold mb-4">Perguntas Frequentes</h2>
+    <div className="space-y-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>Como a IA ajuda na construção?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Nossa IA otimiza designs, prevê custos, gerencia projetos de forma eficiente e integra automação para resultados superiores.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Vocês oferecem consultoria gratuita?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Sim, uma avaliação inicial gratuita para projetos qualificados, incluindo análise de viabilidade e recomendações preliminares.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Quais são os prazos para projetos?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Depende da complexidade, mas nossos métodos ágeis reduzem prazos em até 40% em comparação a abordagens tradicionais.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Vocês atuam em todo o Brasil?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Sim, com equipes remotas e parcerias locais para cobertura nacional.</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Como garantir a sustentabilidade?</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Usamos métricas certificadas como LEED e materiais eco-friendly em todos os projetos.</p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+);
+
+const App = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home': return <HomePage />;
+      case 'business': return <BusinessModelPage />;
+      case 'about': return <AboutPage />;
+      case 'services': return <ServicesPage />;
+      case 'contact': return <ContactPage />;
+      default: return <HomePage />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-blue-500 text-white">
+      <nav className="flex justify-center space-x-4 p-4 bg-blue-800">
+        <Button variant="ghost" onClick={() => setCurrentPage('home')} className="flex items-center space-x-2">
+          <Home size={20} />
+          <span>Home</span>
+        </Button>
+        <Button variant="ghost" onClick={() => setCurrentPage('business')} className="flex items-center space-x-2">
+          <Building2 size={20} />
+          <span>Modelo de Negócios</span>
+        </Button>
+        <Button variant="ghost" onClick={() => setCurrentPage('about')} className="flex items-center space-x-2">
+          <Info size={20} />
+          <span>Sobre</span>
+        </Button>
+        <Button variant="ghost" onClick={() => setCurrentPage('services')} className="flex items-center space-x-2">
+          <Wrench size={20} />
+          <span>Serviços</span>
+        </Button>
+        <Button variant="ghost" onClick={() => setCurrentPage('contact')} className="flex items-center space-x-2">
+          <Contact size={20} />
+          <span>Contato</span>
+        </Button>
+      </nav>
+      {renderPage()}
+      <footer className="p-4 text-center bg-blue-900 mt-8">
+        <p>&copy; 2026 IntelliBuild AI. Todos os direitos reservados. | <a href="#" className="text-blue-300 hover:underline">Política de Privacidade</a> | <a href="#" className="text-blue-300 hover:underline">Termos de Serviço</a></p>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
