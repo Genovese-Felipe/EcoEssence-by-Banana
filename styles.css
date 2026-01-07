@@ -585,6 +585,14 @@ section {
     color: #a0aec0;
 }
 
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.page-content {
+    padding-top: 80px;
+}
+
 /* Responsive Design */
 @media (min-width: 640px) {
     .hero-buttons {
