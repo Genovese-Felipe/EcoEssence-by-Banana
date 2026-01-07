@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability | EcoEssence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
+        <button onclick="switchLanguage('pt')" class="lang-btn" id="lang-pt">PT</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    <a href="index.html" class="logo-text">EcoEssence</a>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html#home" class="nav-link" data-en="Home" data-pt="Início">Home</a>
+                    <a href="products.html" class="nav-link" data-en="Products" data-pt="Produtos">Products</a>
+                    <a href="sustainability.html" class="nav-link" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a>
+                    <a href="index.html#impact" class="nav-link" data-en="Impact" data-pt="Impacto">Impact</a>
+                    <a href="configurator.html" class="btn-primary nav-btn" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</a>
+                </nav>
+                <div class="mobile-menu-button">
+                    <button id="menu-button">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <button id="close-menu-button" class="close-menu-button">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="index.html#home" class="nav-link" data-en="Home" data-pt="Início" onclick="closeMobileMenu()">Home</a>
+        <a href="products.html" class="nav-link" data-en="Products" data-pt="Produtos">Products</a>
+        <a href="sustainability.html" class="nav-link" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a>
+        <a href="index.html#impact" class="nav-link" data-en="Impact" data-pt="Impacto">Impact</a>
+        <a href="configurator.html" class="btn-primary nav-btn" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <section class="text-center">
+            <div class="container">
+                <h1 class="section-title" data-en="Our Commitment to Sustainability" data-pt="Nosso Compromisso com a Sustentabilidade">Our Commitment to Sustainability</h1>
+                <p class="section-subtitle" data-en="Beauty that respects the planet. Discover our sustainable practices." data-pt="Beleza que respeita o planeta. Conheça nossas práticas sustentáveis.">Beauty that respects the planet. Discover our sustainable practices.</p>
+            </div>
+        </section>
+
+        <section class="sustainability-features">
+            <div class="container">
+                <div class="sustainability-grid">
+                    <div class="sustainability-card">
+                        <h3 data-en="Reusable Packaging" data-pt="Embalagens Reutilizáveis">Reusable Packaging</h3>
+                        <p data-en="We use premium glass and aluminum packaging designed for a lifetime of use. Our refill system reduces plastic waste by up to 85%." data-pt="Utilizamos embalagens premium de vidro e alumínio, projetadas para uma vida inteira de uso. Nosso sistema de refil reduz o desperdício de plástico em até 85%.">We use premium glass and aluminum packaging designed for a lifetime of use. Our refill system reduces plastic waste by up to 85%.</p>
+                    </div>
+                    <div class="sustainability-card">
+                        <h3 data-en="Natural Ingredients" data-pt="Ingredientes Naturais">Natural Ingredients</h3>
+                        <p data-en="We prioritize certified organic, cruelty-free, and sustainably sourced ingredients to ensure our products are as kind to your skin as they are to the environment." data-pt="Priorizamos ingredientes orgânicos certificados, livres de crueldade e de origem sustentável, garantindo que nossos produtos sejam tão gentis com sua pele quanto com o meio ambiente.">We prioritize certified organic, cruelty-free, and sustainably sourced ingredients to ensure our products are as kind to your skin as they are to the environment.</p>
+                    </div>
+                    <div class="sustainability-card">
+                        <h3 data-en="Carbon Neutral" data-pt="Carbono Neutro">Carbon Neutral</h3>
+                        <p data-en="We offset all carbon emissions from our production and shipping by investing in verified environmental projects. Your beauty routine can be carbon-neutral." data-pt="Compensamos todas as emissões de carbono de nossa produção e envio, investindo em projetos ambientais verificados. Sua rotina de beleza pode ser neutra em carbono.">We offset all carbon emissions from our production and shipping by investing in verified environmental projects. Your beauty routine can be carbon-neutral.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h4 class="footer-title">EcoEssence</h4>
+                <p class="footer-text" data-en="The Essence of Sustainable and Personalized Beauty." data-pt="A Essência da Beleza Sustentável e Personalizada.">The Essence of Sustainable and Personalized Beauty.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title" data-en="Quick Links" data-pt="Links Rápidos">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#home" class="footer-link" data-en="Home" data-pt="Início">Home</a></li>
+                    <li><a href="products.html" class="footer-link" data-en="Products" data-pt="Produtos">Products</a></li>
+                    <li><a href="sustainability.html" class="footer-link" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a></li>
+                    <li><a href="configurator.html" class="footer-link" data-en="Configurator" data-pt="Configurador">Configurator</a></li>
+                    <li><a href="index.html#impact" class="footer-link" data-en="Impact Calculator" data-pt="Calculadora de Impacto">Impact Calculator</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title" data-en="Support" data-pt="Suporte">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">FAQ</a></li>
+                    <li><a href="#" class="footer-link" data-en="Contact" data-pt="Contato">Contact</a></li>
+                    <li><a href="#" class="footer-link" data-en="Shipping" data-pt="Envios">Shipping</a></li>
+                    <li><a href="#" class="footer-link" data-en="Returns" data-pt="Devoluções">Returns</a></li>
+                    <li><a href="#" class="footer-link" data-en="Terms of Use" data-pt="Termos de Uso">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title" data-en="Contact" data-pt="Contato">Contact</h4>
+                <ul class="footer-contact">
+                    <li>📧 contact@ecoessence.com</li>
+                    <li>📱 (11) 9999-9999</li>
+                    <li>📍 São Paulo, SP</li>
+                    <li data-en="Mon-Fri: 9am-6pm" data-pt="Seg-Sex: 9h-18h">Mon-Fri: 9am-6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoEssence. <span data-en="All rights reserved." data-pt="Todos os direitos reservados.">All rights reserved.</span></p>
+            <p class="mt-2" data-en="Made with 💚 for a better planet" data-pt="Feito com 💚 para um planeta melhor">Made with 💚 for a better planet</p>
+        </div>
+    </footer>
+    <style>
+        .sustainability-features { padding-top: 2rem; }
+        .sustainability-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .sustainability-card { background: var(--light-green); border-radius: 8px; padding: 2rem; }
+        .sustainability-card h3 { margin-bottom: 1rem; }
+        @media (min-width: 768px) {
+            .sustainability-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+    <script src="script.js"></script>
+</body>
+</html>

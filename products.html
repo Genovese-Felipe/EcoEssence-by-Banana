@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | EcoEssence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
+        <button onclick="switchLanguage('pt')" class="lang-btn" id="lang-pt">PT</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">E</div>
+                    <a href="index.html" class="logo-text">EcoEssence</a>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html#home" class="nav-link" data-en="Home" data-pt="Início">Home</a>
+                    <a href="products.html" class="nav-link" data-en="Products" data-pt="Produtos">Products</a>
+                    <a href="sustainability.html" class="nav-link" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a>
+                    <a href="index.html#impact" class="nav-link" data-en="Impact" data-pt="Impacto">Impact</a>
+                    <a href="configurator.html" class="btn-primary nav-btn" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</a>
+                </nav>
+                <div class="mobile-menu-button">
+                    <button id="menu-button">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <button id="close-menu-button" class="close-menu-button">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="index.html#home" class="nav-link" data-en="Home" data-pt="Início" onclick="closeMobileMenu()">Home</a>
+        <a href="products.html" class="nav-link" data-en="Products" data-pt="Produtos">Products</a>
+        <a href="sustainability.html" class="nav-link" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a>
+        <a href="index.html#impact" class="nav-link" data-en="Impact" data-pt="Impacto">Impact</a>
+        <a href="configurator.html" class="btn-primary nav-btn" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</a>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <section class="text-center">
+            <div class="container">
+                <h1 class="section-title" data-en="Our Products" data-pt="Nossos Produtos">Our Products</h1>
+                <p class="section-subtitle" data-en="Discover our line of natural, personalized, and sustainable cosmetics." data-pt="Descubra nossa linha de cosméticos naturais, personalizados e sustentáveis.">Discover our line of natural, personalized, and sustainable cosmetics.</p>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <div class="product-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-color: #fce7f3;"></div>
+                        <h3 class="product-title" data-en="Custom Face Serum" data-pt="Sérum Facial Personalizado">Custom Face Serum</h3>
+                        <p class="product-description" data-en="A unique formula with botanical extracts for radiant skin. Tailored to your skin type." data-pt="Fórmula única com extratos botânicos para uma pele radiante. Feito sob medida para seu tipo de pele.">A unique formula with botanical extracts for radiant skin. Tailored to your skin type.</p>
+                        <a href="configurator.html" class="btn-primary" data-en="Customize" data-pt="Personalizar">Customize</a>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-color: #e0f2f1;"></div>
+                        <h3 class="product-title" data-en="Nourishing Moisturizer" data-pt="Hidratante Nutritivo">Nourishing Moisturizer</h3>
+                        <p class="product-description" data-en="Organic oils and natural humectants for perfect hydration. For all skin types." data-pt="Óleos orgânicos e umectantes naturais para uma hidratação perfeita. Para todos os tipos de pele.">Organic oils and natural humectants for perfect hydration. For all skin types.</p>
+                        <a href="configurator.html" class="btn-primary" data-en="Customize" data-pt="Personalizar">Customize</a>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-color: #f1f5f9;"></div>
+                        <h3 class="product-title" data-en="Gentle Cleanser" data-pt="Limpador Suave">Gentle Cleanser</h3>
+                        <p class="product-description" data-en="Plant-based surfactants for a gentle yet effective cleanse. Naturally clean beauty." data-pt="Surfactantes à base de plantas para uma limpeza suave e eficaz. Beleza limpa, naturalmente.">Plant-based surfactants for a gentle yet effective cleanse. Naturally clean beauty.</p>
+                        <a href="configurator.html" class="btn-primary" data-en="Customize" data-pt="Personalizar">Customize</a>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-color: #fffbeb;"></div>
+                        <h3 class="product-title" data-en="Luxury Body Care" data-pt="Cuidado Corporal de Luxo">Luxury Body Care</h3>
+                        <p class="product-description" data-en="Body lotions and oils made from nature's best ingredients. Complete body wellness." data-pt="Loções e óleos corporais feitos com os melhores ingredientes da natureza. Bem-estar para o corpo todo.">Body lotions and oils made from nature's best ingredients. Complete body wellness.</p>
+                        <a href="configurator.html" class="btn-primary" data-en="Customize" data-pt="Personalizar">Customize</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h4 class="footer-title">EcoEssence</h4>
+                <p class="footer-text" data-en="The Essence of Sustainable and Personalized Beauty." data-pt="A Essência da Beleza Sustentável e Personalizada.">The Essence of Sustainable and Personalized Beauty.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title" data-en="Quick Links" data-pt="Links Rápidos">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#home" class="footer-link" data-en="Home" data-pt="Início">Home</a></li>
+                    <li><a href="products.html" class="footer-link" data-en="Products" data-pt="Produtos">Products</a></li>
+                    <li><a href="sustainability.html" class="footer-link" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a></li>
+                    <li><a href="configurator.html" class="footer-link" data-en="Configurator" data-pt="Configurador">Configurator</a></li>
+                    <li><a href="index.html#impact" class="footer-link" data-en="Impact Calculator" data-pt="Calculadora de Impacto">Impact Calculator</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title" data-en="Support" data-pt="Suporte">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">FAQ</a></li>
+                    <li><a href="#" class="footer-link" data-en="Contact" data-pt="Contato">Contact</a></li>
+                    <li><a href="#" class="footer-link" data-en="Shipping" data-pt="Envios">Shipping</a></li>
+                    <li><a href="#" class="footer-link" data-en="Returns" data-pt="Devoluções">Returns</a></li>
+                    <li><a href="#" class="footer-link" data-en="Terms of Use" data-pt="Termos de Uso">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title" data-en="Contact" data-pt="Contato">Contact</h4>
+                <ul class="footer-contact">
+                    <li>📧 contact@ecoessence.com</li>
+                    <li>📱 (11) 9999-9999</li>
+                    <li>📍 São Paulo, SP</li>
+                    <li data-en="Mon-Fri: 9am-6pm" data-pt="Seg-Sex: 9h-18h">Mon-Fri: 9am-6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoEssence. <span data-en="All rights reserved." data-pt="Todos os direitos reservados.">All rights reserved.</span></p>
+            <p class="mt-2" data-en="Made with 💚 for a better planet" data-pt="Feito com 💚 para um planeta melhor">Made with 💚 for a better planet</p>
+        </div>
+    </footer>
+    <style>
+        .products-section { padding-top: 2rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product-card { background: var(--white); border-radius: 8px; box-shadow: var(--shadow); overflow: hidden; text-align: center; transition: var(--transition); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+        .product-image { height: 200px; background-size: cover; background-position: center; }
+        .product-title { font-size: 1.5rem; margin: 1.5rem 1rem 0.5rem 1rem; }
+        .product-description { color: var(--text-light); margin: 0 1.5rem 1.5rem 1.5rem; }
+        .product-card .btn-primary { margin-bottom: 1.5rem; }
+    </style>
+    <script src="script.js"></script>
+</body>
+</html>
