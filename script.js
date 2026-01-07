@@ -87,12 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Add parallax effect to hero section
+    // Add throttled parallax effect to hero section
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                if (hero && scrolled < 500) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     });
     
@@ -111,17 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Console message
     console.log('%c🌿 EcoEssence by Google Nanobanana', 'font-size: 20px; color: #2d5016; font-weight: bold;');
     console.log('%cCustom natural cosmetics with sustainable packaging', 'font-size: 14px; color: #6b8e23;');
-});
-
-// Add dynamic year to footer if needed
-window.addEventListener('load', () => {
-    const footerText = document.querySelector('.footer-bottom p');
-    if (footerText && footerText.textContent.includes('2026')) {
-        const currentYear = new Date().getFullYear();
-        if (currentYear !== 2026) {
-            footerText.textContent = footerText.textContent.replace('2026', currentYear);
-        }
-    }
 });
 
 // Prevent default behavior for social links (since they're placeholders)
