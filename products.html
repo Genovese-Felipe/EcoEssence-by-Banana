@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - EcoEssence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-green-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i data-lucide="leaf" class="text-green-800"></i>
+                <span class="text-2xl font-bold text-green-800">EcoEssence</span>
+            </a>
+            <ul class="flex space-x-8">
+                <li><a href="index.html" class="text-gray-600 hover:text-green-800">Home</a></li>
+                <li><a href="products.html" class="text-green-800 font-semibold">Products</a></li>
+                <li><a href="sustainability.html" class="text-gray-600 hover:text-green-800">Sustainability</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Products Hero Section -->
+    <section class="bg-green-100 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold text-green-800 mb-4">Personalize Your Beauty</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover our range of natural cosmetics, crafted with the finest ingredients and tailored to your unique skin and hair needs.</p>
+        </div>
+    </section>
+
+    <!-- Customization Process Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-green-800 text-center mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="bg-green-100 rounded-full p-6 mb-4">
+                        <i data-lucide="scan-face" class="w-12 h-12 text-green-800"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">1. Share Your Profile</h3>
+                    <p class="text-gray-600">Complete our simple quiz to tell us about your skin, hair, and beauty goals.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-green-100 rounded-full p-6 mb-4">
+                        <i data-lucide="flask-conical" class="w-12 h-12 text-green-800"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">2. We Formulate</h3>
+                    <p class="text-gray-600">Our experts handcraft a unique blend of natural ingredients based on your profile.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-green-100 rounded-full p-6 mb-4">
+                        <i data-lucide="package-check" class="w-12 h-12 text-green-800"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">3. Enjoy & Refill</h3>
+                    <p class="text-gray-600">Receive your personalized product and enjoy our seamless refill program.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-green-800 text-center mb-12">Our Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Face Serums -->
+                <div class="bg-green-50 rounded-lg shadow-lg p-6">
+                    <i data-lucide="sparkles" class="w-12 h-12 text-green-800 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">Face Serums</h3>
+                    <p class="text-gray-600">Concentrated botanical extracts for radiant, healthy skin, custom blended for your skin type.</p>
+                </div>
+                <!-- Moisturizers -->
+                <div class="bg-green-50 rounded-lg shadow-lg p-6">
+                    <i data-lucide="flower-2" class="w-12 h-12 text-green-800 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">Moisturizers</h3>
+                    <p class="text-gray-600">Nourishing creams with organic oils and natural humectants for perfect hydration.</p>
+                </div>
+                <!-- Cleansers -->
+                <div class="bg-green-50 rounded-lg shadow-lg p-6">
+                    <i data-lucide="sun" class="w-12 h-12 text-green-800 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">Cleansers</h3>
+                    <p class="text-gray-600">Gentle, effective, plant-based formulas for a clean and refreshed feeling.</p>
+                </div>
+                <!-- Body Care -->
+                <div class="bg-green-50 rounded-lg shadow-lg p-6">
+                    <i data-lucide="gem" class="w-12 h-12 text-green-800 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">Body Care</h3>
+                    <p class="text-gray-600">Luxurious lotions and oils crafted from nature's finest ingredients for whole-body wellness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 EcoEssence. All Rights Reserved.</p>
+            <p class="text-sm text-green-200 mt-2">A Fictional Brand by Google Nanobanana</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
