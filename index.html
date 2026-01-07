@@ -19,7 +19,8 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1>🌿 EcoEssence</h1>
+            <img src="assets/logo.png" alt="EcoEssence Logo" class="logo">
+            <h1>EcoEssence</h1>
                 <p class="tagline" data-en="by Google Nanobanana" data-pt="por Google Nanobanana">by Google Nanobanana</p>
             </div>
             <ul class="nav-menu">
@@ -47,15 +48,26 @@
         </div>
     </section>
 
-    <!-- Mission Section -->
+    <!-- About Section -->
     <section id="about" class="mission">
         <div class="container">
-            <h2 data-en="Our Mission" data-pt="Nossa Missão">Our Mission</h2>
-            <p class="mission-text" 
-               data-en="At EcoEssence, we believe beauty should never come at the cost of our planet. We create custom natural cosmetics that are as effective as they are sustainable, packaged in innovative reusable containers that reduce waste and protect our environment."
-               data-pt="Na EcoEssence, acreditamos que a beleza nunca deve custar o nosso planeta. Criamos cosméticos naturais personalizados que são tão eficazes quanto sustentáveis, embalados em recipientes reutilizáveis inovadores que reduzem o desperdício e protegem nosso meio ambiente.">
-               At EcoEssence, we believe beauty should never come at the cost of our planet. We create custom natural cosmetics that are as effective as they are sustainable, packaged in innovative reusable containers that reduce waste and protect our environment.
-            </p>
+            <h2 data-en="About EcoEssence" data-pt="Sobre a EcoEssence">About EcoEssence</h2>
+            <div class="about-content">
+                <div class="about-vision">
+                    <h3 data-en="Our Vision" data-pt="Nossa Visão">Our Vision</h3>
+                    <p data-en="To be the leading brand in personalized natural cosmetics, promoting conscious beauty and a sustainable lifestyle through high-quality products and innovative, reusable packaging."
+                       data-pt="Ser a marca líder em cosméticos naturais personalizados, promovendo a beleza consciente e um estilo de vida sustentável através de produtos de alta qualidade e embalagens inovadoras e reutilizáveis.">
+                       To be the leading brand in personalized natural cosmetics, promoting conscious beauty and a sustainable lifestyle through high-quality products and innovative, reusable packaging.
+                    </p>
+                </div>
+                <div class="about-mission">
+                    <h3 data-en="Our Mission" data-pt="Nossa Missão">Our Mission</h3>
+                    <p data-en="To empower individuals to express their unique beauty with natural, personalized, and ethical products, minimizing environmental impact and fostering an engaged community in sustainability."
+                       data-pt="Capacitar indivíduos a expressarem sua beleza única com produtos naturais, personalizados e éticos, minimizando o impacto ambiental e fomentando uma comunidade engajada na sustentabilidade.">
+                       To empower individuals to express their unique beauty with natural, personalized, and ethical products, minimizing environmental impact and fostering an engaged community in sustainability.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -126,6 +138,63 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="customization" class="customization">
+        <div class="container">
+            <h2 data-en="Customize Your Product" data-pt="Personalize Seu Produto">Customize Your Product</h2>
+            <p class="section-subtitle"
+               data-en="Create a unique cosmetic tailored to your needs"
+               data-pt="Crie um cosmético único adaptado às suas necessidades">
+               Create a unique cosmetic tailored to your needs
+            </p>
+            <form class="customization-form">
+                <div class="form-group">
+                    <label for="product-select" data-en="Choose a Product" data-pt="Escolha um Produto">Choose a Product</label>
+                    <select id="product-select">
+                        <option value="serum" data-en="Face Serum" data-pt="Sérum Facial">Face Serum</option>
+                        <option value="moisturizer" data-en="Moisturizer" data-pt="Hidratante">Moisturizer</option>
+                        <option value="cleanser" data-en="Cleanser" data-pt="Limpador">Cleanser</option>
+                        <option value="body-lotion" data-en="Body Lotion" data-pt="Loção Corporal">Body Lotion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-en="Select Your Ingredients" data-pt="Selecione Seus Ingredientes">Select Your Ingredients</label>
+                    <div class="ingredient-options">
+                        <div class="ingredient-card">
+                            <h4 data-en="Hyaluronic Acid" data-pt="Ácido Hialurônico">Hyaluronic Acid</h4>
+                            <p data-en="For deep hydration" data-pt="Para hidratação profunda">For deep hydration</p>
+                            <button type="button" class="ingredient-btn" data-en="Add" data-pt="Adicionar">Add</button>
+                        </div>
+                        <div class="ingredient-card">
+                            <h4 data-en="Vitamin C" data-pt="Vitamina C">Vitamin C</h4>
+                            <p data-en="For brightening and antioxidant" data-pt="Para clareamento e antioxidante">For brightening and antioxidant</p>
+                            <button type="button" class="ingredient-btn" data-en="Add" data-pt="Adicionar">Add</button>
+                        </div>
+                        <div class="ingredient-card">
+                            <h4 data-en="Niacinamide" data-pt="Niacinamida">Niacinamide</h4>
+                            <p data-en="To reduce pores and fine lines" data-pt="Para reduzir poros e linhas finas">To reduce pores and fine lines</p>
+                            <button type="button" class="ingredient-btn" data-en="Add" data-pt="Adicionar">Add</button>
+                        </div>
+                        <div class="ingredient-card">
+                            <h4 data-en="Aloe Vera" data-pt="Aloe Vera">Aloe Vera</h4>
+                            <p data-en="For a calming effect" data-pt="Para um efeito calmante">For a calming effect</p>
+                            <button type="button" class="ingredient-btn" data-en="Add" data-pt="Adicionar">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="packaging-select" data-en="Choose Your Packaging" data-pt="Escolha Sua Embalagem">Choose Your Packaging</label>
+                    <select id="packaging-select">
+                        <option value="glass-bottle" data-en="Glass Bottle" data-pt="Garrafa de Vidro">Glass Bottle</option>
+                        <option value="aluminum-jar" data-en="Aluminum Jar" data-pt="Pote de Alumínio">Aluminum Jar</option>
+                        <option value="bamboo-container" data-en="Bamboo Container" data-pt="Recipiente de Bambu">Bamboo Container</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button" data-en="Create My Product" data-pt="Criar Meu Produto">Create My Product</button>
+            </form>
         </div>
     </section>
 

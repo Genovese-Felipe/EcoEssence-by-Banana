@@ -81,6 +81,17 @@ body {
     align-items: center;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
 .nav-brand h1 {
     color: var(--primary-color);
     font-size: 2rem;
@@ -189,21 +200,32 @@ body {
 .mission h2 {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
-.mission-text {
-    font-size: 1.2rem;
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: left;
+}
+
+.about-vision h3, .about-mission h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about-vision p, .about-mission p {
+    font-size: 1.1rem;
     color: var(--text-light);
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 /* Products Section */
 .products {
     padding: 80px 0;
-    background: var(--light-green);
+    background: url('assets/background.jpg') no-repeat center center/cover;
 }
 
 .products h2 {
@@ -228,7 +250,9 @@ body {
 }
 
 .product-card {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px var(--shadow);
@@ -275,6 +299,85 @@ body {
     color: var(--secondary-color);
     font-weight: bold;
     margin-right: 8px;
+}
+
+/* Customization Section */
+.customization {
+    padding: 80px 0;
+    background: var(--light-green);
+}
+
+.customization h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.customization-form {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.ingredient-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.ingredient-card {
+    background: var(--light-green);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ingredient-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.ingredient-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.ingredient-btn {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ingredient-btn:hover {
+    background: var(--primary-color);
 }
 
 /* Packaging Section */
