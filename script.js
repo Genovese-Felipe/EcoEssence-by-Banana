@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
     
-    // Observe product cards and value cards
-    const animatedElements = document.querySelectorAll('.product-card, .value-card, .feature-item');
+    // Observe animated elements
+    const animatedElements = document.querySelectorAll('.product-card, .value-card, .feature-item, .timeline-item, .ingredient-card');
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
+                const hero = document.querySelector('.hero, .hero-products');
                 if (hero && scrolled < 500) {
                     hero.style.transform = `translateY(${scrolled * 0.5}px)`;
                 }
@@ -118,6 +118,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Console message
     console.log('%c🌿 EcoEssence by Google Nanobanana', 'font-size: 20px; color: #2d5016; font-weight: bold;');
     console.log('%cCustom natural cosmetics with sustainable packaging', 'font-size: 14px; color: #6b8e23;');
+
+    // Add event listeners for product CTA buttons
+    document.querySelectorAll('.product-cta').forEach(button => {
+        button.addEventListener('click', () => {
+            const message = currentLanguage === 'en'
+                ? 'The customization quiz is coming soon!'
+                : 'O quiz de personalização estará disponível em breve!';
+            alert(message);
+        });
+    });
 });
 
 // Prevent default behavior for social links (since they're placeholders)

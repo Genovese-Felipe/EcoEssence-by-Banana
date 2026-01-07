@@ -1,0 +1,163 @@
+/* Styles for the Products Page */
+
+/* Products Hero Section */
+.hero-products {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-products .hero-title {
+    color: var(--white);
+    font-size: 3rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-products .hero-subtitle {
+    color: var(--white);
+    opacity: 0.9;
+    font-size: 1.5rem;
+    animation: fadeInUp 1.2s ease;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background: var(--light-green);
+    z-index: 1;
+}
+
+.timeline-item {
+    text-align: center;
+    width: 22%;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 4px var(--primary-color);
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+    box-shadow: 0 0 0 4px var(--secondary-color);
+}
+
+.timeline-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Ingredients Section */
+.ingredients {
+    padding: 80px 0;
+    background: var(--light-green);
+}
+
+.ingredients h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.ingredient-card {
+    transition: var(--transition);
+}
+
+.ingredient-card:hover {
+    transform: scale(1.1);
+}
+
+.ingredient-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.ingredient-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Product CTA Button */
+.product-cta {
+    margin-top: 1rem;
+    padding: 10px 25px;
+    font-size: 1rem;
+}
+
+/* Responsive Design for Products Page */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .hero-products .hero-title {
+        font-size: 2.5rem;
+    }
+}

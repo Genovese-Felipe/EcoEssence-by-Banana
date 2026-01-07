@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the custom natural cosmetic products from EcoEssence. Tailored beauty solutions with sustainable packaging.">
+    <meta name="keywords" content="custom cosmetics, natural skincare, eco-friendly products, sustainable beauty">
+    <title>Our Products | EcoEssence by Banana</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
+        <button onclick="switchLanguage('pt')" class="lang-btn" id="lang-pt">PT</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">🌿 EcoEssence</a></h1>
+                <p class="tagline" data-en="by Google Nanobanana" data-pt="por Google Nanobanana">by Google Nanobanana</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" data-en="Home" data-pt="Início">Home</a></li>
+                <li><a href="products.html" data-en="Products" data-pt="Produtos">Products</a></li>
+                <li><a href="index.html#packaging" data-en="Packaging" data-pt="Embalagens">Packaging</a></li>
+                <li><a href="index.html#about" data-en="About" data-pt="Sobre">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content for Products Page -->
+    <main>
+        <!-- Products Hero Section -->
+        <section class="hero-products">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title" data-en="Tailored Natural Beauty" data-pt="Beleza Natural Sob Medida">Tailored Natural Beauty</h2>
+                    <p class="hero-subtitle" data-en="Discover cosmetics designed exclusively for you" data-pt="Descubra cosméticos criados exclusivamente para você">Discover cosmetics designed exclusively for you</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2 data-en="How Customization Works" data-pt="Como a Personalização Funciona">How Customization Works</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">1</div>
+                        <h3 data-en="Take the Quiz" data-pt="Faça o Quiz">Take the Quiz</h3>
+                        <p data-en="Answer a few questions about your skin, preferences, and goals." data-pt="Responda algumas perguntas sobre sua pele, preferências e objetivos.">Answer a few questions about your skin, preferences, and goals.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">2</div>
+                        <h3 data-en="Formula Crafting" data-pt="Criação da Fórmula">Formula Crafting</h3>
+                        <p data-en="Our experts analyze your answers to create a unique formula." data-pt="Nossos especialistas analisam suas respostas para criar uma fórmula única.">Our experts analyze your answers to create a unique formula.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">3</div>
+                        <h3 data-en="Review & Refine" data-pt="Revise e Refine">Review & Refine</h3>
+                        <p data-en="You can review the proposed ingredients and make adjustments." data-pt="Você pode revisar os ingredientes propostos e fazer ajustes.">You can review the proposed ingredients and make adjustments.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">4</div>
+                        <h3 data-en="Sustainable Delivery" data-pt="Entrega Sustentável">Sustainable Delivery</h3>
+                        <p data-en="Receive your custom product in our eco-friendly packaging." data-pt="Receba seu produto personalizado em nossa embalagem ecológica.">Receive your custom product in our eco-friendly packaging.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Section -->
+        <section class="ingredients">
+            <div class="container">
+                <h2 data-en="The Power of Nature" data-pt="O Poder da Natureza">The Power of Nature</h2>
+                <p class="section-subtitle" data-en="We use only the finest natural and organic ingredients" data-pt="Usamos apenas os melhores ingredientes naturais e orgânicos">We use only the finest natural and organic ingredients</p>
+                <div class="ingredient-grid">
+                    <div class="ingredient-card">
+                        <div class="ingredient-icon">🥑</div>
+                        <h3 data-en="Avocado Oil" data-pt="Óleo de Abacate">Avocado Oil</h3>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="ingredient-icon">🌹</div>
+                        <h3 data-en="Rosehip Oil" data-pt="Óleo de Rosa Mosqueta">Rosehip Oil</h3>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="ingredient-icon">🌿</div>
+                        <h3 data-en="Green Tea" data-pt="Chá Verde">Green Tea</h3>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="ingredient-icon">💧</div>
+                        <h3 data-en="Hyaluronic Acid" data-pt="Ácido Hialurônico">Hyaluronic Acid</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <h2 data-en="Featured Products" data-pt="Produtos em Destaque">Featured Products</h2>
+                 <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-icon">🧴</div>
+                    <h3 data-en="Custom Face Serum" data-pt="Sérum Facial Personalizado">Custom Face Serum</h3>
+                    <p data-en="A unique serum blended to target your specific skin concerns." data-pt="Um sérum exclusivo misturado para atender às suas preocupações específicas com a pele.">A unique serum blended to target your specific skin concerns.</p>
+                    <button class="cta-button product-cta" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🌸</div>
+                    <h3 data-en="Tailored Moisturizer" data-pt="Hidratante Sob Medida">Tailored Moisturizer</h3>
+                    <p data-en="The perfect hydration formula designed for your skin type and environment." data-pt="A fórmula de hidratação perfeita projetada para o seu tipo de pele e ambiente.">The perfect hydration formula designed for your skin type and environment.</p>
+                    <button class="cta-button product-cta" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🍃</div>
+                    <h3 data-en="Gentle Cleansing Oil" data-pt="Óleo de Limpeza Suave">Gentle Cleansing Oil</h3>
+                    <p data-en="A custom blend of natural oils to gently remove impurities without stripping the skin." data-pt="Uma mistura personalizada de óleos naturais para remover suavemente as impurezas sem agredir a pele.">A custom blend of natural oils to gently remove impurities without stripping the skin.</p>
+                    <button class="cta-button product-cta" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</button>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌿 EcoEssence</h3>
+                    <p data-en="Natural beauty, sustainably delivered" data-pt="Beleza natural, entregue de forma sustentável">Natural beauty, sustainably delivered</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Contact" data-pt="Contato">Contact</h4>
+                    <p>info@ecoessence.example</p>
+                    <p data-en="A fictional brand by Google Nanobanana" data-pt="Uma marca fictícia da Google Nanobanana">A fictional brand by Google Nanobanana</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Follow Us" data-pt="Siga-nos">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoEssence by Google Nanobanana. <span data-en="All rights reserved." data-pt="Todos os direitos reservados.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
