@@ -364,6 +364,53 @@ body {
     color: var(--text-light);
 }
 
+/* Key Sections */
+.key-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.key-section.alternate {
+    background: var(--light-green);
+}
+
+.key-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.key-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.key-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: var(--transition);
+}
+
+.key-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.key-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.key-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
 /* Footer */
 .footer {
     background: var(--primary-color);
