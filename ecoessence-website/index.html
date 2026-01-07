@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoEssence - The Essence of Sustainable and Personalized Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #2a5242;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+        .bg-eco-light {
+            background-color: #f0fdf4;
+        }
+        .text-eco-dark {
+            color: #2a5242;
+        }
+        .nav-link {
+            color: #2a5242;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4CAF50;
+        }
+        .footer-bg {
+            background-color: #2a5242;
+        }
+        .icon-size {
+            width: 48px;
+            height: 48px;
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .lang-btn {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .lang-btn.active {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
+        <button onclick="switchLanguage('pt')" class="lang-btn" id="lang-pt">PT</button>
+    </div>
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-12 flex justify-between items-center fixed w-full z-10 top-0">
+        <div class="flex items-center">
+            <div class="h-10 w-10 mr-3 rounded-full bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-white font-bold text-lg">E</div>
+            <a href="index.html" class="text-2xl font-bold text-eco-dark">EcoEssence</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link text-lg font-medium" data-en="Home" data-pt="Início">Home</a>
+            <a href="products.html" class="nav-link text-lg font-medium" data-en="Products" data-pt="Produtos">Products</a>
+            <a href="sustainability.html" class="nav-link text-lg font-medium" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a>
+            <a href="impact-calculator.html" class="nav-link text-lg font-medium" data-en="Impact" data-pt="Impacto">Impact</a>
+            <a href="configurator.html" class="btn-primary text-lg font-medium" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="menu-button" class="text-eco-dark focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-20 flex flex-col items-center justify-center space-y-8 md:hidden">
+        <button id="close-menu-button" class="absolute top-6 right-6 text-eco-dark focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="#home" class="nav-link text-3xl font-medium" onclick="closeMobileMenu()" data-en="Home" data-pt="Início">Home</a>
+        <a href="products.html" class="nav-link text-3xl font-medium" data-en="Products" data-pt="Produtos">Products</a>
+        <a href="sustainability.html" class="nav-link text-3xl font-medium" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a>
+        <a href="impact-calculator.html" class="nav-link text-3xl font-medium" data-en="Impact" data-pt="Impacto">Impact</a>
+        <a href="configurator.html" class="btn-primary text-3xl font-medium" data-en="Customize Now" data-pt="Personalize Agora">Customize Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-24 md:pt-40 md:pb-32" style="margin-top: 0;">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-eco-dark" data-en="The Essence of Sustainable Beauty" data-pt="A Essência da Beleza Sustentável">The Essence of Sustainable Beauty</h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-700" data-en="Custom natural cosmetics for you, with respect for the planet. Reusable packaging, organic ingredients, and exclusive formulas." data-pt="Cosméticos naturais personalizados para você, com respeito ao planeta. Embalagens reutilizáveis, ingredientes orgânicos e fórmulas exclusivas.">Custom natural cosmetics for you, with respect for the planet. Reusable packaging, organic ingredients, and exclusive formulas.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="configurator.html" class="btn-primary text-xl font-semibold text-center" data-en="Create My Formula" data-pt="Criar Minha Fórmula">Create My Formula</a>
+                        <a href="impact-calculator.html" class="bg-white text-green-600 px-8 py-4 rounded-lg text-xl font-semibold border-2 border-green-600 hover:bg-green-50 transition-all text-center" data-en="Calculate My Impact" data-pt="Calcular Meu Impacto">Calculate My Impact</a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative float-animation">
+                        <div class="w-80 h-80 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M12 12v10"/><path d="M6.6 4.6A9 9 0 1 1 3.34 19.82"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="stat-number">50k+</div>
+                    <p class="text-gray-600 text-lg" data-en="Happy Clients" data-pt="Clientes Felizes">Happy Clients</p>
+                </div>
+                <div>
+                    <div class="stat-number">85%</div>
+                    <p class="text-gray-600 text-lg" data-en="Less Plastic" data-pt="Menos Plástico">Less Plastic</p>
+                </div>
+                <div>
+                    <div class="stat-number">100%</div>
+                    <p class="text-gray-600 text-lg" data-en="Natural" data-pt="Natural">Natural</p>
+                </div>
+                <div>
+                    <div class="stat-number">0%</div>
+                    <p class="text-gray-600 text-lg" data-en="Animal Cruelty" data-pt="Crueldade Animal">Animal Cruelty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-eco-light">
+        <div class="container mx-auto px-6 md:px-12 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-eco-dark" data-en="Why Choose EcoEssence?" data-pt="Por Que Escolher EcoEssence?">Why Choose EcoEssence?</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto" data-en="We combine science, nature, and sustainability to create unique products that really work." data-pt="Combinamos ciência, natureza e sustentabilidade para criar produtos únicos que realmente funcionam.">We combine science, nature, and sustainability to create unique products that really work.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-size mb-4"><path d="M9.91 1.71l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5a1 1 0 0 1 1.66 0l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5"/><path d="M2.91 13.71l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5a1 1 0 0 1 1.66 0l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5"/><path d="M16.91 13.71l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5a1 1 0 0 1 1.66 0l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5"/><path d="M9.91 19.71l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5a1 1 0 0 1 1.66 0l1.43 2.5a1 1 0 0 0 1.66 0l1.43-2.5"/></svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-eco-dark" data-en="Personalized Beauty" data-pt="Beleza Personalizada">Personalized Beauty</h3>
+                    <p class="text-lg text-gray-600" data-en="Exclusive formulas created to meet your unique skin and hair needs. You choose the ingredients, we create the magic." data-pt="Fórmulas exclusivas criadas para atender às suas necessidades únicas de pele e cabelo. Você escolhe os ingredientes, nós criamos a magia.">Exclusive formulas created to meet your unique skin and hair needs. You choose the ingredients, we create the magic.</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-size mb-4"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 18 2c1 2.4 2 5.5 0 8-.9 1.8-1.5 2.8-2.5 3.2c-1.1.5-2.5-.4-3.5-1.5A7 7 0 0 1 11 20zM2 21h10"/><path d="M10.4 14.3c.3-.3.5-.7.6-1.2"/></svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-eco-dark" data-en="Natural Ingredients" data-pt="Ingredientes Naturais">Natural Ingredients</h3>
+                    <p class="text-lg text-gray-600" data-en="The power of nature in every drop. Certified organic ingredients, free of parabens, sulfates, or harsh chemicals." data-pt="O poder da natureza em cada gota. Ingredientes orgânicos certificados, sem parabenos, sulfatos ou químicos agressivos.">The power of nature in every drop. Certified organic ingredients, free of parabens, sulfates, or harsh chemicals.</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-size mb-4"><path d="M21 12A9 9 0 0 0 6 5.3v-1A1 1 0 0 0 4 3.3v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1A7 7 0 1 1 21 12z"/></svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-eco-dark" data-en="Sustainable Commitment" data-pt="Compromisso Sustentável">Sustainable Commitment</h3>
+                    <p class="text-lg text-gray-600" data-en="Premium reusable packaging and a refill system that reduces plastic waste by 85%. Beauty that cares for the planet." data-pt="Embalagens reutilizáveis premium e sistema de refil que reduz 85% do desperdício plástico. Beleza que cuida do planeta.">Premium reusable packaging and a refill system that reduces plastic waste by 85%. Beauty that cares for the planet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center text-eco-dark" data-en="How It Works" data-pt="Como Funciona">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-green-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-eco-dark mb-2" data-en="Questionnaire" data-pt="Questionário">Questionnaire</h3>
+                    <p class="text-gray-600" data-en="Answer questions about your skin, hair, and preferences." data-pt="Responda perguntas sobre sua pele, cabelo e preferências.">Answer questions about your skin, hair, and preferences.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-green-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-eco-dark mb-2" data-en="Customization" data-pt="Personalização">Customization</h3>
+                    <p class="text-gray-600" data-en="Choose ingredients and fragrances for your unique formula." data-pt="Escolha ingredientes e fragrâncias para sua fórmula única.">Choose ingredients and fragrances for your unique formula.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-green-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-eco-dark mb-2" data-en="Production" data-pt="Produção">Production</h3>
+                    <p class="text-gray-600" data-en="We formulate your product with fresh, natural ingredients." data-pt="Formulamos seu produto com ingredientes frescos e naturais.">We formulate your product with fresh, natural ingredients.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-green-600">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-eco-dark mb-2" data-en="Delivery" data-pt="Entrega">Delivery</h3>
+                    <p class="text-gray-600" data-en="Receive it at home in premium reusable packaging." data-pt="Receba em casa em embalagem premium reutilizável.">Receive it at home in premium reusable packaging.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="configurator.html" class="btn-primary text-xl font-semibold" data-en="Get Started" data-pt="Começar Agora">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-green-50 to-blue-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-eco-dark" data-en="What Our Clients Say" data-pt="O Que Nossos Clientes Dizem">What Our Clients Say</h2>
+            <p class="text-xl text-center text-gray-600 mb-12" data-en="More than 50,000 people have already transformed their beauty routine" data-pt="Mais de 50.000 pessoas já transformaram sua rotina de beleza">More than 50,000 people have already transformed their beauty routine</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">M</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-eco-dark">Maria Silva</h4>
+                            <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-en='"Finally, I found products that really work for my sensitive skin! The personalization made all the difference. And knowing that I am helping the planet is incredible."' data-pt='"Finalmente encontrei produtos que realmente funcionam para minha pele sensível! A personalização fez toda a diferença. E saber que estou ajudando o planeta é incrível."'>"Finally, I found products that really work for my sensitive skin! The personalization made all the difference. And knowing that I am helping the planet is incredible."</p>
+                    <p class="text-sm text-gray-500 mt-4" data-en="Client for 8 months" data-pt="Cliente há 8 meses">Client for 8 months</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">J</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-eco-dark">João Santos</h4>
+                            <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-en='"The refill system is brilliant! I save money and still help the environment. The products are of the highest quality and the packaging is beautiful."' data-pt='"O sistema de refil é genial! Economizo dinheiro e ainda ajudo o meio ambiente. Os produtos são de altíssima qualidade e a embalagem é linda."'>"The refill system is brilliant! I save money and still help the environment. The products are of the highest quality and the packaging is beautiful."</p>
+                    <p class="text-sm text-gray-500 mt-4" data-en="Client for 1 year" data-pt="Cliente há 1 ano">Client for 1 year</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">A</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-eco-dark">Ana Costa</h4>
+                            <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-en='"My hair has never been so healthy! The personalized formula met my needs exactly. I recommend it to all my friends!"' data-pt='"Meu cabelo nunca esteve tão saudável! A fórmula personalizada atendeu exatamente minhas necessidades. Recomendo para todas as minhas amigas!"'>"My hair has never been so healthy! The personalized formula met my needs exactly. I recommend it to all my friends!"</p>
+                    <p class="text-sm text-gray-500 mt-4" data-en="Client for 6 months" data-pt="Cliente há 6 meses">Client for 6 months</p>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">C</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-eco-dark">Carlos Oliveira</h4>
+                            <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-en='"Impressive the difference in my skin! The natural ingredients really work. And the service is exceptional."' data-pt='"Impressionante a diferença na minha pele! Os ingredientes naturais realmente fazem efeito. E o atendimento é excepcional."'>"Impressive the difference in my skin! The natural ingredients really work. And the service is exceptional."</p>
+                    <p class="text-sm text-gray-500 mt-4" data-en="Client for 4 months" data-pt="Cliente há 4 meses">Client for 4 months</p>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">L</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-eco-dark">Luana Ferreira</h4>
+                            <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-en='"I love being able to choose the ingredients! I am allergic to some components and here I can create perfect products for me. Revolutionary!"' data-pt='"Adoro poder escolher os ingredientes! Tenho alergia a alguns componentes e aqui consigo criar produtos perfeitos para mim. Revolucionário!"'>"I love being able to choose the ingredients! I am allergic to some components and here I can create perfect products for me. Revolutionary!"</p>
+                    <p class="text-sm text-gray-500 mt-4" data-en="Client for 10 months" data-pt="Cliente há 10 meses">Client for 10 months</p>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">R</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-eco-dark">Rafael Almeida</h4>
+                            <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-en='"The quality is superior to any brand I have ever used. And knowing that I am contributing to a better world is priceless. Worth every penny!"' data-pt='"A qualidade é superior a qualquer marca que já usei. E saber que estou contribuindo para um mundo melhor não tem preço. Vale cada centavo!"'>"The quality is superior to any brand I have ever used. And knowing that I am contributing to a better world is priceless. Worth every penny!"</p>
+                    <p class="text-sm text-gray-500 mt-4" data-en="Client for 7 months" data-pt="Cliente há 7 meses">Client for 7 months</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-eco-dark" data-en="Real Results" data-pt="Resultados Reais">Real Results</h2>
+            <p class="text-xl text-center text-gray-600 mb-12" data-en="See the transformation of our clients" data-pt="Veja a transformação de nossos clientes">See the transformation of our clients</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-gradient-to-br from-pink-200 to-pink-300 h-64 flex items-center justify-center">
+                        <div class="text-center">
+                            <p class="text-4xl mb-2">✨</p>
+                            <p class="font-bold text-eco-dark" data-en="Radiant Skin" data-pt="Pele Radiante">Radiant Skin</p>
+                            <p class="text-sm text-gray-600" data-en="After 30 days" data-pt="Após 30 dias">After 30 days</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-gradient-to-br from-blue-200 to-blue-300 h-64 flex items-center justify-center">
+                        <div class="text-center">
+                            <p class="text-4xl mb-2">💆‍♀️</p>
+                            <p class="font-bold text-eco-dark" data-en="Healthy Hair" data-pt="Cabelos Saudáveis">Healthy Hair</p>
+                            <p class="text-sm text-gray-600" data-en="After 45 days" data-pt="Após 45 dias">After 45 days</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+                    <div class="bg-gradient-to-br from-purple-200 to-purple-300 h-64 flex items-center justify-center">
+                        <div class="text-center">
+                            <p class="text-4xl mb-2">🌟</p>
+                            <p class="font-bold text-eco-dark" data-en="Even Skin" data-pt="Pele Uniforme">Even Skin</p>
+                            <p class="text-sm text-gray-600" data-en="After 60 days" data-pt="Após 60 dias">After 60 days</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-green-500 to-green-600 text-center">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white" data-en="Ready to Transform Your Beauty Routine?" data-pt="Pronto para Transformar Sua Rotina de Beleza?">Ready to Transform Your Beauty Routine?</h2>
+            <p class="text-xl md:text-2xl mb-10 text-green-50" data-en="Discover the difference of products made to measure for you and for the planet." data-pt="Descubra a diferença de produtos feitos sob medida para você e para o planeta.">Discover the difference of products made to measure for you and for the planet.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="configurator.html" class="bg-white text-green-600 px-8 py-4 rounded-lg text-xl font-bold hover:bg-green-50 transition-all inline-block" data-en="Start Customizing" data-pt="Comece a Personalizar">Start Customizing</a>
+                <a href="products.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-white hover:text-green-600 transition-all inline-block" data-en="See Products" data-pt="Ver Produtos">See Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-eco-light">
+        <div class="container mx-auto px-6 md:px-12 max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-eco-dark" data-en="Stay in the Loop" data-pt="Fique Por Dentro">Stay in the Loop</h2>
+            <p class="text-lg text-gray-600 mb-8" data-en="Receive natural beauty tips, exclusive offers, and sustainability news." data-pt="Receba dicas de beleza natural, ofertas exclusivas e novidades sobre sustentabilidade.">Receive natural beauty tips, exclusive offers, and sustainability news.</p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                <input type="email" placeholder="Your best email" class="flex-1 px-6 py-4 rounded-lg border-2 border-green-300 focus:outline-none focus:border-green-500">
+                <button class="btn-primary text-lg font-semibold whitespace-nowrap" data-en="Subscribe" data-pt="Inscrever-se">Subscribe</button>
+            </div>
+            <p class="text-sm text-gray-500 mt-4" data-en="We do not send spam. Unsubscribe whenever you want." data-pt="Não enviamos spam. Cancele quando quiser.">We do not send spam. Unsubscribe whenever you want.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg text-white py-12 px-6 md:px-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="text-xl font-bold mb-4">EcoEssence</h4>
+                <p class="text-gray-300 mb-4" data-en="The Essence of Sustainable and Personalized Beauty." data-pt="A Essência da Beleza Sustentável e Personalizada.">The Essence of Sustainable and Personalized Beauty.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4" data-en="Quick Links" data-pt="Links Rápidos">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-gray-300 hover:text-white transition-colors" data-en="Home" data-pt="Início">Home</a></li>
+                    <li><a href="products.html" class="text-gray-300 hover:text-white transition-colors" data-en="Products" data-pt="Produtos">Products</a></li>
+                    <li><a href="sustainability.html" class="text-gray-300 hover:text-white transition-colors" data-en="Sustainability" data-pt="Sustentabilidade">Sustainability</a></li>
+                    <li><a href="configurator.html" class="text-gray-300 hover:text-white transition-colors" data-en="Configurator" data-pt="Configurador">Configurator</a></li>
+                    <li><a href="impact-calculator.html" class="text-gray-300 hover:text-white transition-colors" data-en="Impact Calculator" data-pt="Calculadora de Impacto">Impact Calculator</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4" data-en="Support" data-pt="Suporte">Support</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-en="Contact" data-pt="Contato">Contact</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-en="Shipping" data-pt="Envios">Shipping</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-en="Returns" data-pt="Devoluções">Returns</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors" data-en="Terms of Use" data-pt="Termos de Uso">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4" data-en="Contact" data-pt="Contato">Contact</h4>
+                <ul class="space-y-2 text-gray-300">
+                    <li>📧 contato@ecoessence.com.br</li>
+                    <li>📱 (11) 9999-9999</li>
+                    <li>📍 São Paulo, SP</li>
+                    <li data-en="Mon-Fri: 9am-6pm" data-pt="Seg-Sex: 9h-18h">Mon-Fri: 9am-6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-600 text-center text-gray-400">
+            <p>&copy; 2026 EcoEssence. <span data-en="All rights reserved." data-pt="Todos os direitos reservados.">All rights reserved.</span></p>
+            <p class="mt-2 text-sm" data-en="Made with 💚 for a better planet" data-pt="Feito com 💚 para um planeta melhor">Made with 💚 for a better planet</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
