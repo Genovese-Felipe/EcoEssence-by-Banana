@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
     
     // Observe product cards and value cards
-    const animatedElements = document.querySelectorAll('.product-card, .value-card, .feature-item');
+    const animatedElements = document.querySelectorAll('.product-card, .value-card, .feature-item, .value-proposition-card');
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
